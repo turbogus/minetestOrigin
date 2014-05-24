@@ -1,0 +1,69 @@
+[submodule "moretrees"]
+	path = moretrees
+	url = https://github.com/VanessaE/moretrees.git
+[submodule "minetest-nether"]
+	path = minetest-nether
+	url = https://github.com/lkjoel/minetest-nether.git
+[submodule "BobBlocks"]
+	path = BobBlocks
+	url = https://github.com/rabbibob/BobBlocks.git
+[submodule "minetest-mod-mesecons"]
+	path = minetest-mod-mesecons
+	url = https://github.com/Jeija/minetest-mod-mesecons.git
+[submodule "carts"]
+	path = carts
+	url = https://github.com/PilzAdam/carts.git
+[submodule "TNT"]
+	path = TNT
+	url = https://github.com/PilzAdam/TNT.git
+[submodule "farming_plus"]
+	path = farming_plus
+	url = https://github.com/PilzAdam/farming_plus.git
+[submodule "animals_modpack"]
+	path = animals_modpack
+	url = https://github.com/sapier/animals_modpack.git
+[submodule "food"]
+	path = food
+	url = https://github.com/rubenwardy/food.git
+[submodule "throwing"]
+	path = throwing
+	url = https://github.com/PilzAdam/throwing.git
+[submodule "minetest-3d_armor"]
+	path = minetest-3d_armor
+	url = https://github.com/stujones11/minetest-3d_armor.git
+[submodule "boats"]
+	path = boats
+	url = https://github.com/PilzAdam/boats.git
+[submodule "memorandum"]
+	path = memorandum
+	url = https://github.com/Mossmanikin/memorandum.git
+[submodule "potions"]
+	path = potions
+	url = https://github.com/Traxie21/potions.git
+[submodule "hud"]
+	path = hud
+	url = https://github.com/BlockMen/hud.git
+[submodule "minetest-inventory_plus"]
+	path = minetest-inventory_plus
+	url = https://github.com/cornernote/minetest-inventory_plus.git
+[submodule "mushroom"]
+	path = mushroom
+	url = https://github.com/VanessaE/mushroom.git
+[submodule "gemalde"]
+	path = gemalde
+	url = https://github.com/CasimirKaPazi/gemalde
+[submodule "specialties"]
+	path = specialties
+	url = https://github.com/metalstache/specialties.git
+[submodule "builtin_item"]
+	path = builtin_item
+	url = https://github.com/PilzAdam/builtin_item.git
+[submodule "minetest-kaeza_misc"]
+	path = minetest-kaeza_misc
+	url = https://github.com/kaeza/minetest-kaeza_misc.git
+[submodule "torches"]
+	path = torches
+	url = https://github.com/BlockMen/torches.git
+[submodule "item_drop"]
+	path = item_drop
+	url = https://github.com/PilzAdam/item_drop.git
