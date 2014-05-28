@@ -52,9 +52,6 @@
 [submodule "gemalde"]
 	path = gemalde
 	url = https://github.com/CasimirKaPazi/gemalde
-[submodule "specialties"]
-	path = specialties
-	url = https://github.com/metalstache/specialties.git
 [submodule "builtin_item"]
 	path = builtin_item
 	url = https://github.com/PilzAdam/builtin_item.git
