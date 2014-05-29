@@ -64,3 +64,6 @@
 [submodule "item_drop"]
 	path = item_drop
 	url = https://github.com/PilzAdam/item_drop.git
+[submodule "potionspack"]
+	path = potionspack
+	url = https://github.com/Traxie21/potionspack
