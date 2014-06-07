@@ -67,12 +67,6 @@
 [submodule "potionspack"]
 	path = potionspack
 	url = https://github.com/Traxie21/potionspack
-[submodule "minetest-craft_guide"]
-	path = minetest-craft_guide
-	url = https://github.com/cornernote/minetest-craft_guide
 [submodule "minetest-mod-snow"]
 	path = minetest-mod-snow
 	url = https://github.com/Splizard/minetest-mod-snow
-[submodule "minetest-zcg"]
-	path = minetest-zcg
-	url = https://github.com/Zeg9/minetest-zcg
