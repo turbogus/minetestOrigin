@@ -73,3 +73,6 @@
 [submodule "minetest-mod-snow"]
 	path = minetest-mod-snow
 	url = https://github.com/Splizard/minetest-mod-snow
+[submodule "minetest-zcg"]
+	path = minetest-zcg
+	url = https://github.com/Zeg9/minetest-zcg
