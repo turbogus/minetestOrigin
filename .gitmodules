@@ -67,3 +67,6 @@
 [submodule "potionspack"]
 	path = potionspack
 	url = https://github.com/Traxie21/potionspack
+[submodule "minetest-craft_guide"]
+	path = minetest-craft_guide
+	url = https://github.com/cornernote/minetest-craft_guide
