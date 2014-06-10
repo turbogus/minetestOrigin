@@ -16,8 +16,11 @@ function vombie_drop()
 	local result = {}
 	if math.random() < 0.05 then
 		table.insert(result,"animalmaterials:bone 2")
+		
 	else
 		table.insert(result,"animalmaterials:bone 1")
+		table.insert(result,"experience:orb 1")
+		
 	end
 
 	table.insert(result,"animalmaterials:meat_undead 1")
@@ -105,6 +108,7 @@ vombie_prototype = {
 					armor_groups= {
 						fleshy=95,
 						daemon=30,
+						xp=1,	--ajouté par bibi pour test avec mod experience
 					},
 					groups = vombie_groups,
 					envid="on_ground_1",
@@ -160,8 +164,8 @@ vombie_prototype = {
 								},
 					sun_damage = {
 								name="animal_vombie_sun_damage",
-								gain = 0.25,
-								max_hear_distance = 7,
+								gain = 0.05,
+								max_hear_distance = 3,
 								},
 					},
 		animation = {

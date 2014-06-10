@@ -167,7 +167,7 @@ minetest.register_craft({
 	output = "beds:bed",
 	recipe = {
 		{"group:wool", "group:wool", "group:wool", },
-		{"group:wood", "group:wood", "group:wood", }
+		{"default:stick", "", "default:stick", }
 	}
 })
 

@@ -26,6 +26,43 @@ minetest.register_craft( {
 	}
 })
 
+--
+-- Fiole remplie d'eau ( remplissage à l'aide d'un seau ).
+-- 
+minetest.register_node("vessels:glass_bottle_water", {
+	description = "Glass Bottle (water)",
+	drawtype = "plantlike",
+	tiles = {"vessels_glass_bottle_water.png"},
+	inventory_image = "vessels_glass_bottle_water.png",
+	wield_image = "vessels_glass_bottle_water.png",
+	paramtype = "light",
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
+	},
+	groups = {vessel=1,dig_immediate=3,attached_node=1},
+	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_craft( {
+	output = "vessels:glass_bottle_water",
+	recipe = {
+		{ "bucket:bucket_water"},
+		{"vessels:glass_bottle"}
+	},
+	replacement = { "bucket:bucket_water","bucket:bucket_empty"},
+})
+
+minetest.register_craft( {
+	output = "vessels:glass_bottle_water",
+	recipe = {
+		{ "default:water_source"},
+		{"vessels:glass_bottle"}
+	}
+})
+
+
 minetest.register_node("vessels:drinking_glass", {
 	description = "Drinking Glass (empty)",
 	drawtype = "plantlike",

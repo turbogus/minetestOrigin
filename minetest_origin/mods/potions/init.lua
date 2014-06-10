@@ -137,4 +137,127 @@ minetest.register_craftitem("potions:glass_bottle", {
 		end,
 })
 
+--
+-- Crafting des potions
+--
+
+
+-- Potion de base : aucun effets, permet le craft des autres potions
+-- Nécessite des pommes du nether ( gagnées via les Xp ou récupérable dans le nether
+--
+minetest.register_craftitem("potions:base", {
+	description = "Potion base",
+	inventory_image = "potions_base.png",
+	groups = {magic=1},
+})
+minetest.register_craft({
+	output = 'potions:base',
+	recipe = {
+		{'nether:nether_apple'},
+		{'vessels:glass_bottle_water'},
+	}
+})
+minetest.register_craft({
+	type = "fuel",
+	recipe = "potions:base",
+	burntime = 1,
+})
+
+--****************************************************
+
+-- Le chaudrons !
+--
+
+minetest.register_craft({
+	output = 'potions:cauldron',
+	recipe = {
+		{'default:steel_ingot', '', 'default:steel_ingot'},
+		{'default:steel_ingot', '', 'default:steel_ingot'},
+		{'default:steel_ingot', 'default:steel_ingot', 'default:steel_ingot'},
+		}
+})
+
+	
+minetest.register_node("potions:cauldron", {
+	description = "Cauldron for making potions",
+	tiles = {"potions_cauldron_top_inactiv.png", "potions_cauldron.png", "potions_cauldron.png",
+		"potions_cauldron.png", "potions_cauldron.png", "potions_cauldron.png"},
+	paramtype2 = "facedir",
+	groups = {cracky=2},
+	drop = "potions:cauldron",
+	legacy_facedir_simple = true,
+	on_construct = function(pos)
+		local meta = minetest.env:get_meta(pos)
+		meta:set_string("formspec", default.furnace_inactive_formspec)
+		meta:set_string("infotext", "Cauldron")
+		local inv = meta:get_inventory()
+		inv:set_size("potions_base", 1)
+		inv:set_size("ingredient", 1)
+		inv:set_size("sortie", 1)
+	end,
+	can_dig = function(pos,player)
+		local meta = minetest.env:get_meta(pos);
+		local inv = meta:get_inventory()
+		if not inv:is_empty("potions_base") then
+			return false
+		elseif not inv:is_empty("ingredient") then
+			return false
+		elseif not inv:is_empty("sortie") then
+			return false
+		end
+		return true
+	end,
+})
+
+
+minetest.register_node("potions:cauldron_active", {
+	description = "Cauldron for making potions",
+	tiles = {"potions_cauldron_top_activ.png", "potions_cauldron.png", "potions_cauldron.png",
+		"potions_cauldron.png", "potions_cauldron.png", "potions_cauldron.png"},
+	paramtype2 = "facedir",
+	light_source = 15,
+	drop = "potions:cauldron",
+	groups = {cracky=2, not_in_creative_inventory=1},
+	legacy_facedir_simple = true,
+	on_construct = function(pos)
+		local meta = minetest.env:get_meta(pos)
+		meta:set_string("formspec", default.furnace_inactive_formspec)
+		meta:set_string("infotext", "Cauldron");
+		local inv = meta:get_inventory()
+		inv:set_size("potions_base", 1)
+		inv:set_size("ingredient", 1)
+		inv:set_size("sortie", 1)
+	end,
+	can_dig = function(pos,player)
+		local meta = minetest.env:get_meta(pos);
+		local inv = meta:get_inventory()
+		if not inv:is_empty("potions_base") then
+			return false
+		elseif not inv:is_empty("ingredient") then
+			return false
+		elseif not inv:is_empty("sortie") then
+			return false
+		end
+		return true
+	end,
+})
+
+
+--*****************************************************
+
+
+
+
+
+
+
+
+
+-- Essais pour obtention d'une potion.
+minetest.register_craft({
+	output = 'potionspack:antigravity',
+	recipe = {
+		{'default:dirt'},
+	}
+})
 
