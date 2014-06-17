@@ -19,3 +19,30 @@ MinetestOrigin (v0.0)
 	* vessel : ajout d'un fiole remplie d'eau ( on rempli avec un saut d'eau ). 
 	* potions : ajout de la potion de base pour créer les autres potions.
 	* potions : modification de la texture du chaudron et ajout de textures : chaudron_top inactif et chaudron_top_actif
+
+
+	17/06/2014
+	
+	* ajout du mod pipeworks
+	* ajout du mod snow
+	* modification de l'entete de présentation et de l'icone de game mod
+	* retrait du mod moretrees
+	
+	
+	
+***********
+
+A prévoir :
+
+	* potion : craft des potions
+	* nether : craft de l'orb en 9 morceaux
+	* experience : definir les items reçu par les point d'Xp
+	* mob trader : definir les prix et blocs pouvant etre acheté
+	* ajout du mod fence ( volet comme minecraft )
+	* réglage du biome jungle dans le minetest.conf
+ 
+ NB :
+ 
+	* minetest origin doit être aussi prenant que minecraft mais beaucoup plus léger !
+ 
+ 
