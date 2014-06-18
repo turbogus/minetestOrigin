@@ -1,0 +1,46 @@
+Bloc donnant des points d'experiences :
+
+	* mese : 5 pts
+	* diamond : 10 pts
+	* gold : 3 pts
+	* iron : 2 pt
+
+
+Monstres donnant des points d'expériences :
+
+	* tuer un zombi : 2 pts
+	* tuer un oerkki : 5 pt
+	* tuer un dungeons master : 10 pts
+	
+
+Niveaux de points d'Xp et items correspondants :
+
+	level1 = 100
+	level1_drop = "default:steelblock 10"
+
+	level2 = 200
+	level2_drop = "default:steelblock 99"
+
+	level3 = 300
+	level3_drop = "default:mese 10"
+
+	level4 = 400
+	level4_drop = "default:mese 20"
+
+	level5 = 500
+	level5_drop = "default:mese 30"
+
+	level6 = 700
+	level6_drop = "nether:nether_apple 10"
+
+	level7 = 1000
+	level7_drop = "nether:nether_apple 20"
+
+	level8 = 1400
+	level8_drop = "nether:nether_apple 30"
+
+	level9 = 1800
+	level9_drop = "nether:nether_book"
+
+	level10 = 2500
+	level10_drop = "nether:nether_pearl"

@@ -1,0 +1,61 @@
+MinetestOrigin (v0.0)
+
+	07/06/2014
+	
+	* bed : modification du craft.
+	* ajout du submodule potionpack ( déclaration des potions du mod potion ).
+	* animals : modification de la texture du zombi.
+	* animals : modification du son du zombi quand il est blessé par le soleil.
+	* animals : modification de la texture des vaches.
+	* experience : miner un bloc de mese donne 10 point d'Xp
+	* Ajout du submodule snow + test. Non utilisé dans le game mod car utilise trop de ressource et fait ramer le serveur ( voir pour réglages ).
+	* nether : modification du mod pour utilisation avec "default:obsidian".
+	* suppression du mod obsidian ( dépendance de nether ).
+	
+	
+
+	08/06/2014
+	
+	* vessel : ajout d'un fiole remplie d'eau ( on rempli avec un saut d'eau ). 
+	* potions : ajout de la potion de base pour créer les autres potions.
+	* potions : modification de la texture du chaudron et ajout de textures : chaudron_top inactif et chaudron_top_actif
+
+
+	17/06/2014
+	
+	* ajout du mod pipeworks
+	* ajout du mod snow
+	* modification de l'entete de présentation et de l'icone de game mod
+	* retrait du mod moretrees
+	
+	18/06/2014
+	
+	* nether : ajout des mese fragments ( 9 fragments = 1 nether pearl )
+	* nether : ajout du mether book ( nécessaire pour la création des potions de niveau 2 et les enchantements ).
+	* définition des blocs et des monstres faisant gagner des point d'Xp ( détails dans le fichier "obtiention des points XP.txt" )
+	* experience : ajout pour les nodes les points d'experience obtenu.
+	* experience : modification des items obtenu suivant les points d'experience.
+	
+	
+	
+	
+***********
+
+A prévoir :
+
+	* potion : craft des potions + pertes de points d'experience quand craft d'une potion ( x1 ) && impossibilité de crafter une potion si pas de pt d'experiences.
+	* nether : nether_book : dommages au joueur quand utilisation  + perte de points d'experience
+	* experience : obtention d'Xp en tuant les monstres du mode animals ( drop de point d'Xp sous form d'item & transformation en lua 
+	entity quand on_drop de l'inventaire.
+	* experience : affichage des points dans l'HUD du joueur.
+	* mob trader : definir les prix et blocs pouvant etre acheté
+	* ajout du mod fence ( volet comme minecraft )
+	* réglage du biome jungle dans le minetest.conf
+	
+	
+ 
+ NB :
+ 
+	* minetest origin doit être aussi prenant que minecraft mais beaucoup plus léger !
+ 
+ 
