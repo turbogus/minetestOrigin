@@ -1,16 +1,16 @@
 Bloc donnant des points d'experiences :
 
-	* mese : 5 pts
-	* diamond : 10 pts
-	* gold : 3 pts
-	* iron : 2 pt
+	* mese  
+	* diamond  
+	* gold  
+	* iron 
 
 
 Monstres donnant des points d'expériences :
 
-	* tuer un zombi : 2 pts
-	* tuer un oerkki : 5 pt
-	* tuer un dungeons master : 10 pts
+	* tuer un zombi 
+	* tuer un oerkki 
+	* tuer un dungeons master 
 	
 
 Niveaux de points d'Xp et items correspondants :

@@ -51,7 +51,7 @@ minetest.register_node("default:stone_with_mese", {
 	description = "Mese Ore",
 	tiles = {"default_stone.png^default_mineral_mese.png"},
 	is_ground_content = true,
-	groups = {cracky=1,xp=5},		--Modififé par bibi
+	groups = {cracky=1,xp=1},		--Modififé par bibi
 	drop = "default:mese_crystal",
 	sounds = default.node_sound_stone_defaults(),
 })
@@ -60,7 +60,7 @@ minetest.register_node("default:stone_with_gold", {
 	description = "Gold Ore",
 	tiles = {"default_stone.png^default_mineral_gold.png"},
 	is_ground_content = true,
-	groups = {cracky=2,xp=2},
+	groups = {cracky=2,xp=1},
 	drop = "default:gold_lump",
 	sounds = default.node_sound_stone_defaults(),
 })
@@ -69,7 +69,7 @@ minetest.register_node("default:stone_with_diamond", {
 	description = "Diamond Ore",
 	tiles = {"default_stone.png^default_mineral_diamond.png"},
 	is_ground_content = true,
-	groups = {cracky=1,xp=10},
+	groups = {cracky=1,xp=1},
 	drop = "default:diamond",
 	sounds = default.node_sound_stone_defaults(),
 })

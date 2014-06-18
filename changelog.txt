@@ -35,6 +35,7 @@ MinetestOrigin (v0.0)
 	* définition des blocs et des monstres faisant gagner des point d'Xp ( détails dans le fichier "obtiention des points XP.txt" )
 	* experience : ajout pour les nodes les points d'experience obtenu.
 	* experience : modification des items obtenu suivant les points d'experience.
+	* remplacement du mod door standard par la version door+
 	
 	
 	
