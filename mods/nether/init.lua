@@ -468,7 +468,16 @@ minetest.register_node("nether:nether_apple", {
 	groups = {fleshy=3, dig_immediate=3},
 	on_use = minetest.item_eat(-4),
 	sounds = default.node_sound_defaults(),
+
 })
+
+-- Nether apple juice
+minetest.register_craftitem("nether:nether_apple_juice", {
+	description = "Nether Apple Juice",
+	wield_image = "nether_apple_juice.png",
+	inventory_image = "nether_apple_juice.png",
+})
+
 
 -- Nether torch
 minetest.register_node("nether:nether_torch", {
@@ -575,6 +584,15 @@ minetest.register_tool("nether:nether_book", {
 	}
 })
 
+-- Nether GLowstone dust
+minetest.register_craftitem("nether:glowstone_dust", {
+	description = "Glowstone dust",
+	wield_image = "nether_glowstone_dust.png",
+	inventory_image = "nether_glowstone_dust.png",
+	visual = "sprite",
+	physical = true,
+	textures = {"nether_glowstone_dust.png"},
+})
 
 -- Nether Glowstone (Thanks to Gilli)
 minetest.register_node( "nether:glowstone", { 
@@ -584,7 +602,16 @@ minetest.register_node( "nether:glowstone", {
 	inventory_inventory_image = minetest.inventorycube( "nether_glowstone.png" ),
 	is_ground_content = true,
 	groups = {snappy=2, choppy=2, oddly_breakable_by_hand = 1.5},
+	drop = "nether:glowstone_dust 4",
 })
+minetest.register_craft({
+	output = "nether:glowstone",
+	recipe = {
+		{"nether:glowstone_dust", "nether:glowstone_dust"},
+		{"nether:glowstone_dust", "nether:glowstone_dust"},
+	}
+})
+
 
 -- Create the Nether
 minetest.register_on_generated(function(minp, maxp)

@@ -141,7 +141,7 @@ minetest.register_craftitem("potions:glass_bottle", {
 -- Crafting des potions
 --
 
-
+--[[
 -- Potion de base : aucun effets, permet le craft des autres potions
 -- Nécessite des pommes du nether ( gagnées via les Xp ou récupérable dans le nether
 --
@@ -162,12 +162,13 @@ minetest.register_craft({
 	recipe = "potions:base",
 	burntime = 1,
 })
-
+]]--
 --****************************************************
 
 -- Le chaudrons !
 --
 
+--[[
 minetest.register_craft({
 	output = 'potions:cauldron',
 	recipe = {
@@ -243,6 +244,7 @@ minetest.register_node("potions:cauldron_active", {
 })
 
 
+
 --*****************************************************
 
 
@@ -260,4 +262,4 @@ minetest.register_craft({
 		{'default:dirt'},
 	}
 })
-
+]]--

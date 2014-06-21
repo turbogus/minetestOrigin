@@ -37,7 +37,13 @@ MinetestOrigin (v0.0)
 	* experience : modification des items obtenu suivant les points d'experience.
 	* remplacement du mod door standard par la version door+
 	
+	19/06/2014
 	
+	* nether : création de la poudre de glowstone ( pour améliration des potions ). Obtenu quand minage d'un bloc de glowstone ( x4 ).
+			   4 boules de poudre de glowstone reforme une glowstone.
+			   
+			   ajout du jus de pomme du nether ( optenu avec la presse du mod magic ).
+	* magic : création du mod.celui ci depend de nether, vessel, potions, potionspack et defaut et contient tous les crafts des potions.
 	
 	
 ***********

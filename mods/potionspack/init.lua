@@ -17,7 +17,7 @@ function(itemstack, user, pointed_thing)
 	user:set_physics_override(1,nil,1)
 end)
 
-potions.register_potion("Speed", "lightgrey", 60,
+potions.register_potion("Speed", "lightgrey", 60, --/ok
 function(itemstack, user, pointed_thing) 
 	user:set_physics_override(3, 1, 1)
 end,
@@ -62,7 +62,7 @@ function(itemstack, user, pointed_thing)
 	user:set_physics_override(1,1,1)
 end)
 
-potions.register_potion("Health I", "red", 1,
+potions.register_potion("Health I", "red", 1, -- /ok
 function(itemstack, user, pointed_thing) 
 	user:set_hp(user:get_hp()+6)
 end,
