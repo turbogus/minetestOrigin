@@ -51,7 +51,7 @@ minetest.register_craft( {
 		{ "bucket:bucket_water"},
 		{"vessels:glass_bottle"}
 	},
-	replacement = { "bucket:bucket_water","bucket:bucket_empty"},
+	replacements = {{ "bucket:bucket_water","bucket:bucket_empty"}},
 })
 
 minetest.register_craft( {

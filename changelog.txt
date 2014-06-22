@@ -28,6 +28,7 @@ MinetestOrigin (v0.0)
 	* modification de l'entete de présentation et de l'icone de game mod
 	* retrait du mod moretrees
 	
+
 	18/06/2014
 	
 	* nether : ajout des mese fragments ( 9 fragments = 1 nether pearl )
@@ -37,19 +38,37 @@ MinetestOrigin (v0.0)
 	* experience : modification des items obtenu suivant les points d'experience.
 	* remplacement du mod door standard par la version door+
 	
+
 	19/06/2014
 	
 	* nether : création de la poudre de glowstone ( pour améliration des potions ). Obtenu quand minage d'un bloc de glowstone ( x4 ).
 			   4 boules de poudre de glowstone reforme une glowstone.
-			   
 			   ajout du jus de pomme du nether ( optenu avec la presse du mod magic ).
 	* magic : création du mod.celui ci depend de nether, vessel, potions, potionspack et defaut et contient tous les crafts des potions.
+
+
+		
+	21/06/2014
+	
+	* vessels/nether/magic : armonisation des textures des bouteilles avec les textures de potions + astuce : pour reconnaitre les potions :
+							 les potions craftées possède un bouchon
+							 alors que la fiole d'eau, de jus de pomme du nether et la potion de base non pas de bouchons
+							 
+							 
+	* magic : ajout des potions health 1 et health 2
 	
 	
-***********
+	
+	22/06/2014
+	
+	* magic : craft des potions health, antigravity et speed niveau I et II
+	
+	
+**********
 
 A prévoir :
 
+	* potion : armonisation des textures potions/vessels
 	* potion : craft des potions + pertes de points d'experience quand craft d'une potion ( x1 ) && impossibilité de crafter une potion si pas de pt d'experiences.
 	* nether : nether_book : dommages au joueur quand utilisation  + perte de points d'experience
 	* experience : obtention d'Xp en tuant les monstres du mode animals ( drop de point d'Xp sous form d'item & transformation en lua 
