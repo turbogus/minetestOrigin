@@ -466,7 +466,7 @@ minetest.register_craft(
 		
 		recipe = {
 			{"default:coal_lump"},
-			{"potionspack:healthii"},
+			{"potionspack:harmingii"},
 		}
 
 	})
