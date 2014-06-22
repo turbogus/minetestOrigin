@@ -62,20 +62,19 @@ MinetestOrigin (v0.0)
 	22/06/2014
 	
 	* magic : craft des potions health, antigravity et speed niveau I et II
+	* magic : craft des potions "négative" et inversion avec la poussière de glowstone ou la poussière d'os
 	
 	
 **********
 
 A prévoir :
 
-	* potion : armonisation des textures potions/vessels
-	* potion : craft des potions + pertes de points d'experience quand craft d'une potion ( x1 ) && impossibilité de crafter une potion si pas de pt d'experiences.
-	* nether : nether_book : dommages au joueur quand utilisation  + perte de points d'experience
+	
+	* nether : nether_book : dommages au joueur quand utilisation  + perte de points d'experience + nether book transforme en direct un arbre ene arbre du nether !
 	* experience : obtention d'Xp en tuant les monstres du mode animals ( drop de point d'Xp sous form d'item & transformation en lua 
 	entity quand on_drop de l'inventaire.
 	* experience : affichage des points dans l'HUD du joueur.
 	* mob trader : definir les prix et blocs pouvant etre acheté
-	* ajout du mod fence ( volet comme minecraft )
 	* réglage du biome jungle dans le minetest.conf
 	
 	
