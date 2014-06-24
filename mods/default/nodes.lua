@@ -1117,10 +1117,11 @@ minetest.register_node("default:mese", {
 	description = "Mese Block",
 	tiles = {"default_mese_block.png"},
 	is_ground_content = true,
-	groups = {cracky=1,level=2,xp=2},
+	drop = "default:mese_crystal 9",
+	groups = {cracky=1,level=2,xp=1},
 	sounds = default.node_sound_stone_defaults(),
 })
-minetest.register_alias("default:mese_block", "default:mese")
+--minetest.register_alias("default:mese_block", "default:mese")
 
 minetest.register_node("default:goldblock", {
 	description = "Gold Block",

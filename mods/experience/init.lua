@@ -43,22 +43,22 @@ level4 = 400
 level4_drop = "default:mese 20"
 
 level5 = 500
-level5_drop = "default:mese 30"
+level5_drop = "nether:nether_apple 10"
 
 level6 = 700
-level6_drop = "nether:nether_apple 10"
+level6_drop = "nether:nether_apple 20"
 
 level7 = 1000
-level7_drop = "nether:nether_apple 20"
+level7_drop = "nether:nether_apple 30"
 
 level8 = 1400
-level8_drop = "nether:nether_apple 30"
+level8_drop = "nether:nether_glowstone 30"
 
 level9 = 1800
-level9_drop = "nether:nether_book"
+level9_drop =  "nether:nether_pearl" 
 
 level10 = 2500
-level10_drop = "nether:nether_pearl"
+level10_drop ="nether:nether_book"
 
 
 

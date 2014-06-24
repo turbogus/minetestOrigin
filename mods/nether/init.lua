@@ -584,6 +584,99 @@ minetest.register_tool("nether:nether_book", {
 	}
 })
 
+
+
+
+
+
+
+
+
+
+
+
+-- Nether Book physique
+-- Transforme les items du monde standard en item du monde du nether quand on clic dessus !
+-- 
+minetest.register_on_punchnode(function(p, node, player)
+	
+	-- Lecture du nombre de point d'experience du joueur
+	xp_read = io.open(minetest.get_worldpath().."/"..player:get_player_name().."_experience", "r")
+	experience = xp_read:read("*n")		--NB : on utilise ("*n") pour spécifier que l'on lit un nombre et pas un string
+	xp_read:close()
+	
+	--
+	-- Replacement de tree par le nether tree
+	--
+	if node.name == "default:tree" and player:get_wielded_item():get_name() == "nether:nether_book" and experience > 0 then
+		
+		-- transformation du tree en nether_tree
+		minetest.env:add_node(p,{name="nether:nether_tree"})
+		
+		-- on retire un 5 points d'experience au joueur	
+		experience = experience - 5
+		
+		-- si après soustraction, le nombre de point est négatif, on mes à 0 et le joueur perd 1/2 point de vie !
+		if experience <= 0 then
+			experience = 0
+			player:set_hp(player:get_hp()-0.5)
+		end
+		
+		-- on écrit dans le fichier le nouveau nombre de point d'experience
+		xp_write = io.open(minetest.get_worldpath().."/"..player:get_player_name().."_experience", "w")
+		xp_write:write(experience)
+		xp_write:close()
+		
+	end
+	
+	--
+	-- Remplacement des apples par des nether apple
+	--
+	if node.name == "default:apple" and player:get_wielded_item():get_name() == "nether:nether_book" and experience > 0 then
+	
+		-- transformation de la pomme en pomme du nether
+		minetest.env:add_node(p,{name="nether:nether_apple"})
+		
+		-- on retire un 5 points d'experience au joueur	
+		experience = experience - 5
+		
+		-- si après soustraction, le nombre de point est négatif, on mes à 0 et le joueur perd 1/2 point de vie !
+		if experience <= 0 then
+			experience = 0
+			player:set_hp(player:get_hp()-0.5)
+		end
+		
+		-- on écrit dans le fichier le nouveau nombre de point d'experience
+		xp_write = io.open(minetest.get_worldpath().."/"..player:get_player_name().."_experience", "w")
+		xp_write:write(experience)
+		xp_write:close()	
+	end
+
+
+	--
+	-- Si plus de point d'Xp, alors perte de -1/2 Hp à chaque utilisation !!!
+	--
+	if player:get_wielded_item():get_name() == "nether:nether_book" and experience <= 0 then
+		player:set_hp(player:get_hp()-0.5)
+	end
+
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- Nether GLowstone dust
 minetest.register_craftitem("nether:glowstone_dust", {
 	description = "Glowstone dust",
@@ -601,7 +694,7 @@ minetest.register_node( "nether:glowstone", {
 	light_source = 15, -- Like in Minecraft
 	inventory_inventory_image = minetest.inventorycube( "nether_glowstone.png" ),
 	is_ground_content = true,
-	groups = {snappy=2, choppy=2, oddly_breakable_by_hand = 1.5},
+	groups = {snappy=2, choppy=2, oddly_breakable_by_hand = 1.5, xp=1},
 	drop = "nether:glowstone_dust 4",
 })
 minetest.register_craft({
