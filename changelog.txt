@@ -83,6 +83,8 @@ MinetestOrigin (v0.0)
 	
 	* Experience : changement de nom pour les items poit d'XP
 				   ajout de l'item orb_five qui donne 5 points d'XP.
+				   Ajout des points d'XP dans le HUD
+				   Déplacement de la gestion du nether book dans experience ( gestion de la soustraction des point d'XP ).
 				   
 	* Retrait du mod snow : empeche la génération des plantes de farming plus et de la junglegrass		   
 	* ajout de bones + temps de blocage de l'inventaire à 1min au lieu de 20 min.			   
