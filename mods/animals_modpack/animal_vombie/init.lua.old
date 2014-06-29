@@ -14,19 +14,18 @@ dofile (modpath .. "/flame.lua")
 
 function vombie_drop()
 	local result = {}
-	
-	
-	
 	if math.random() < 0.05 then
 		table.insert(result,"animalmaterials:bone 2")
 		
 	else
 		table.insert(result,"animalmaterials:bone 1")
-		table.insert(result,"experience:orb_one")
+		--table.insert(result,"experience:orb 1")
+		
 	end
 
 	table.insert(result,"animalmaterials:meat_undead 1")
-
+	
+	
 	return result
 end
 
@@ -110,9 +109,9 @@ vombie_prototype = {
 					armor_groups= {
 						fleshy=95,
 						daemon=30,
-						--xp=1,	--ajouté par bibi pour test avec mod experience
+						
 					},
-					groups = vombie_groups,
+					groups = vombie_groups,	-
 					envid="on_ground_1",
 					custom_on_step_handler = vombie_on_step_handler,
 					custom_on_activate_handler = vombie_on_activate_handler,
@@ -230,9 +229,6 @@ minetest.register_entity("animal_vombie:vombie_spawner",
 	collisionbox    = { 0.0,0.0,0.0,0.0,0.0,0.0},
 	visual          = "sprite",
 	textures        = { "invisible.png^[makealpha:128,0,0^[makealpha:128,128,0" },
-	
-	
-	
 	on_activate = function(self,staticdata)
 
 		local pos = self.object:getpos();

@@ -598,6 +598,9 @@ minetest.register_tool("nether:nether_book", {
 -- Nether Book physique
 -- Transforme les items du monde standard en item du monde du nether quand on clic dessus !
 -- 
+
+-- DEPLAÇÉ DANS LE MOD EXPERIENCE POUR FACILITER LA GESTION DES POINT D'XP
+--[[
 minetest.register_on_punchnode(function(p, node, player)
 	
 	-- Lecture du nombre de point d'experience du joueur
@@ -662,7 +665,7 @@ minetest.register_on_punchnode(function(p, node, player)
 
 end)
 
-
+]]--
 
 
 

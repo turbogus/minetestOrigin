@@ -64,16 +64,50 @@ MinetestOrigin (v0.0)
 	* magic : tous les crafts de toutes les potions ok !
 	* nether : modification de la texture du netherbook.
 	
+	
 	23/06/2014
 	
 	* nether : début de la physique du nether book : transformation des tree et des apples quand on tape dessus avec le netherbook ( à continuer )
 	
+	
+	28/06/2014
+	
+	* ajout du mod crafting_pack ( inventaire et table de travail comme minecraft ) : bonne surprise : fait moin lagger le jeu car pas de gestion de transparence
+	  dans le menu !  
+	* suppression de mushroom ( aucune utilité sur la map )
+	* Experience : création d'un item devant être droppé puis punché pour obtenir 1 pt d'XP ( utilisation avec le mod animals )
+				   un zombi rapporte 1 pt d'XP.
+	
+	
+	29/06/2014
+	
+	* Experience : changement de nom pour les items poit d'XP
+				   ajout de l'item orb_five qui donne 5 points d'XP.
+				   
+	* Retrait du mod snow : empeche la génération des plantes de farming plus et de la junglegrass		   
+	* ajout de bones + temps de blocage de l'inventaire à 1min au lieu de 20 min.			   
+				   
+				   
+				   
+				   
+				   
+				   
+	
+**********
+
+A finaliser pour la version stable 0.1 :
+
+	* nombres et type de mods définitif
+	* trader : item vendu dans l'inventaire + fixer les prix.
+	* argent : mod pour crafter des pièces de fer et d'or. <-- Remplaçé par le commerce à base de l'ingot de cuivre ( cooper ingot ).
+	* experience : affichage des points d'XP dans le HUD + les monstres doivent dropper de l'XP + redéfinir toutes les actions donnant des pt d'xp.
+
 **********
 
 A prévoir :
 
 	* magic : création de l'enclume permettant la réparation des outils et armure ( moyennant des points d'experience ! )
-	* nether : nether_book : dommages au joueur quand utilisation  + perte de points d'experience + nether book transforme en direct un arbre ene arbre du nether !
+	
 	* experience : obtention d'Xp en tuant les monstres du mode animals ( drop de point d'Xp sous form d'item & transformation en lua 
 	entity quand on_drop de l'inventaire.
 	* experience : affichage des points dans l'HUD du joueur.

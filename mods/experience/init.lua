@@ -1,4 +1,8 @@
 
+-- list pour l'affichage des pts d'Xp dans le hud
+local xpHUD = {}
+
+
 --[[level1 = 100
 level1_drop = "default:steelblock 10"
 
@@ -36,28 +40,28 @@ level1_drop = "default:steelblock 10"
 level2 = 200
 level2_drop = "default:steelblock 99"
 
-level3 = 300
+level3 = 400
 level3_drop = "default:mese 10"
 
-level4 = 400
+level4 = 800
 level4_drop = "default:mese 20"
 
-level5 = 500
+level5 = 1600
 level5_drop = "nether:nether_apple 10"
 
-level6 = 700
+level6 = 3200
 level6_drop = "nether:nether_apple 20"
 
-level7 = 1000
+level7 = 6400
 level7_drop = "nether:nether_apple 30"
 
-level8 = 1400
+level8 = 12800
 level8_drop = "nether:nether_glowstone 30"
 
-level9 = 1800
+level9 = 25600
 level9_drop =  "nether:nether_pearl" 
 
-level10 = 2500
+level10 = 51200
 level10_drop ="nether:nether_book"
 
 
@@ -70,6 +74,53 @@ minetest.register_on_dignode(function(pos, oldnode, digger)
 		minetest.env:add_entity(pos, "experience:orb")
 	end
 end)
+
+
+
+-- Création d'un élément HUD à la connexion du joueurs
+-- affichage des point dans le hud a la connexion du joueur
+--
+minetest.register_on_joinplayer(function(player)
+
+	minetest.after(0.5, function ( self )
+	
+		--on récupère le nom du joueur
+		local nom = player:get_player_name()
+	
+	
+		--lecture du fichier contenant les points d'Xp
+		fichier = io.open(minetest.get_worldpath().."/"..player:get_player_name().."_experience", "r")
+			experience = fichier:read("*l")
+		fichier:close()
+	
+		--parametrage du hud
+		xpHUD[nom] = {}
+		xpHUD[nom].id = player:hud_add({
+			hud_elem_type = "text",
+			name = "XPbar",
+			number = 0xFFFFFF,
+			position = {x=1, y=1},
+			offset = {x=-80, y=-30},
+			direction = 0,
+			text = "XP :"..experience.."",
+			alignment = {x=1, y=1},
+	
+		})
+		
+	end)
+	
+end)
+
+
+-- Réinitialisation de l'élément HUD du joueur quand il quitte la partie
+minetest.register_on_leaveplayer(function(player)
+	xpHUD[player:get_player_name()] = nil
+end)
+
+
+
+
+
 --give a new player some xp
 minetest.register_on_newplayer(function(player)
 	file = io.open(minetest.get_worldpath().."/"..player:get_player_name().."_experience", "w")
@@ -104,6 +155,18 @@ minetest.register_globalstep(function(dtime)
 					xp_write = io.open(minetest.get_worldpath().."/"..player:get_player_name().."_experience", "w")
 					xp_write:write(new_xp)
 					xp_write:close()
+					
+					
+					--Mise à jour du HUD avec les nouveaux points d'XP
+					local nom = player:get_player_name()
+					if xpHUD[nom] then
+						player:hud_change(xpHUD[nom].id, "text","XP :"..new_xp.."")
+					end
+					
+					
+					
+					
+					
 					if new_xp == level1 then
 						minetest.env:add_item(pos, level1_drop)
 						minetest.sound_play("level_up", {
@@ -184,6 +247,154 @@ minetest.register_globalstep(function(dtime)
 		end
 	end
 end)
+
+
+
+-- déclaration d'une orb d'XP en tant que node ( pour utilisation avec animals )
+-- On récupère ainsi dans l'inventaire un item "orbs". Il faut le jeter par terre pui
+-- taper dessus pour que le point d'XP soit prix en compte dans le compteur d'XP.
+-- L'item est ensuite effaçé pour ne plus être réutilisé.
+--
+--Orb donnant 1 pt d'XP
+minetest.register_node("experience:orb_one", {
+	
+	description = "One orb experience.",
+	drawtype = "plantlike",
+	tile_images = {"orb.png"},
+	inventory_image = "orb.png",
+	walkable = false,
+	paramtype = "light",
+	sunlight_propagates = true,
+	drop = "default:air",
+	groups = {fleshy=3, dig_immediate=3, xp=1},
+})
+--[[minetest.register_on_punchnode(function(p, node, player)
+	if node.name == "experience:orb_one" then
+		local pos = player:getpos()
+		minetest.add_entity(pos,"experience:orb")
+		minetest.set_node(pos,"air")
+	end
+end)]]--
+
+--Orb donnant 5 pt d'XP
+minetest.register_node("experience:orb_five", {
+	
+	description = "Five orb experience.",
+	drawtype = "plantlike",
+	tile_images = {"orb_five.png"},
+	inventory_image = "orb_five.png",
+	walkable = false,
+	paramtype = "light",
+	sunlight_propagates = true,
+	drop = "default:air",
+	groups = {fleshy=3, dig_immediate=3},
+})
+minetest.register_on_punchnode(function(p, node, player)
+	if node.name == "experience:orb_five" then
+		local pos = player:getpos()
+		minetest.add_entity(pos,"experience:orb")
+		minetest.add_entity(pos,"experience:orb")
+		minetest.add_entity(pos,"experience:orb")
+		minetest.add_entity(pos,"experience:orb")
+		minetest.add_entity(pos,"experience:orb")
+		
+		
+	end
+end)
+
+
+
+
+
+
+
+
+-- Gestion du nether book pour la soustraction des pt d'experiences lors de 
+-- sont utilisation
+--
+minetest.register_on_punchnode(function(p, node, player)
+	
+	if player:get_wielded_item():get_name() == "nether:nether_book" then
+		
+		-- Lecture du nombre de point d'experience du joueur
+		xp_read = io.open(minetest.get_worldpath().."/"..player:get_player_name().."_experience", "r")
+		experience = xp_read:read("*n")		--NB : on utilise ("*n") pour spécifier que l'on lit un nombre et pas un string
+		xp_read:close()
+		
+		--TRANSFORMATION TREE EN NETHER TREE
+		--
+		if node.name == "default:tree" and experience > 0 then
+		
+			-- transformation du tree en nether_tree
+			minetest.env:add_node(p,{name="nether:nether_tree"})
+		
+			-- on retire un 5 points d'experience au joueur	
+			experience = experience - 5
+		
+			-- si après soustraction, le nombre de point est négatif, on mes à 0 et le joueur perd 1/2 point de vie !
+			if experience <= 0 then
+				experience = 0
+				player:set_hp(player:get_hp()-0.5)
+			end
+		
+			-- on écrit dans le fichier le nouveau nombre de point d'experience
+			xp_write = io.open(minetest.get_worldpath().."/"..player:get_player_name().."_experience", "w")
+			xp_write:write(experience)
+			xp_write:close()
+			
+			--Mise à jour des points dans le hud
+			--local nom = player:get_player_name()
+			if xpHUD[player:get_player_name()] then
+				player:hud_change(xpHUD[player:get_player_name()].id, "text","XP :"..experience.."")
+			end
+
+		end
+		
+		--TRANSFORMATION APPLE EN NETHER APPLE
+		if node.name == "default:apple" and experience > 0 then
+		
+			-- transformation du tree en nether_tree
+			minetest.env:add_node(p,{name="nether:nether_apple"})
+		
+			experience = experience - 5
+		
+			if experience <= 0 then
+				experience = 0
+				player:set_hp(player:get_hp()-0.5)
+			end
+		
+			xp_write = io.open(minetest.get_worldpath().."/"..player:get_player_name().."_experience", "w")
+			xp_write:write(experience)
+			xp_write:close()
+			
+			if xpHUD[player:get_player_name()] then
+				player:hud_change(xpHUD[player:get_player_name()].id, "text","XP :"..experience.."")
+			end
+
+		end
+		
+		if experience <= 0 then
+			player:set_hp(player:get_hp()-0.5)
+		end
+		
+	end
+	
+	
+
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 minetest.register_entity("experience:orb", {
 	physical = true,
