@@ -21,6 +21,7 @@ local function deepcopy ( t )
 end
 
 local newbook = deepcopy(minetest.registered_items["default:book"]);
+newbook.stack_max = 1 --stack max = 1 to prevent text mix
 
 newbook.on_use = function ( itemstack, user, pointed_thing )
 
