@@ -35,16 +35,20 @@ level10_drop = "default:mese 99"
 ]]--
 
 level1 = 100
-level1_drop = "default:steelblock 10"
+-- level1_drop = "default:steelblock 10"
+level1_drop = nil
 
 level2 = 200
-level2_drop = "default:steelblock 99"
+-- level2_drop = "default:steelblock 99"
+level2_drop = nil
 
 level3 = 400
-level3_drop = "default:mese 10"
+--level3_drop = "default:mese 10"
+level3_drop = nil
 
 level4 = 800
-level4_drop = "default:mese 20"
+--level4_drop = "default:mese 20"
+level4_drop = nil
 
 level5 = 1600
 level5_drop = "nether:nether_apple 10"

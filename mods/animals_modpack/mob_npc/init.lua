@@ -183,6 +183,8 @@ npc_trader_prototype = {
 				attention_distance = 7.5,
 				attention_max = 10,
 		},
+		
+		--[[
 		trader_inventory = {
 				goods = {
 							{ "default:mese 1", "default:iron_lump 30",},
@@ -205,6 +207,32 @@ npc_trader_prototype = {
 				random_names = { "Hans","Franz","Xaver","Fritz","Thomas","Martin"},
 			}
 		}
+		]]--
+		
+		trader_inventory = {
+				goods = {
+							{ "animalmaterials:saddle 1", "default:copper_ingot 2", nil }, --1 selle
+							{ "mob_archer:archer 1", "default:copper_ingot 5", nil }, --2 archer
+							{ "mob_guard:guard 1", "default:copper_ingot 5", nil }, --3 garde
+							{ "default:apple 10", "default:copper_ingot 1", nil }, --4 pommes x10
+							{ "farming:bread 5", "default:copper_ingot 1", nil }, --5 pains x5
+							{ "animalmaterials:cooked_meat 1", "default:copper_ingot 1" }, --6 viande rotie x3
+							{ "default:sword_steel 1", "default:copper_ingot 2", nil }, --7 épée
+							{ "default:pick_steel 1", "default:copper_ingot 2", nil }, --8 pioche
+							{ "animalmaterials:scissors 1", "default:copper_ingot 2", nil }, --9 ciseau
+							{ "throwing:bow_wood 1", "default:copper_ingot 3", nil }, --10 arc
+							{ "throwing:arrow 10", "default:copper_ingot 2", nil }, --11 fleches 10
+							{ "3d_armor:helmet_steel 1", "default:copper_ingot 3", nil }, --12 casque
+							{ "3d_armor:chestplate_steel 1", "default:copper_ingot 4", nil }, --13 cote de maille
+							{ "3d_armor:boots_steel 1", "default:copper_ingot 3", nil }, --14 bottes
+							{ "nether:nether_apple 3", "default:copper_ingot 12", nil }, --15 nether apple
+							{ "nether:glowstone_dust 2", "default:copper_ingot 10", nil }, --16 glowglass dust
+						},
+				random_names = { "Hans","Franz","Xaver","Fritz","Thomas","Martin"},
+			}
+		}
+		
+		
 		
 --register with animals mod
 minetest.log("action","\tadding mob "..npc_trader_prototype.name)
