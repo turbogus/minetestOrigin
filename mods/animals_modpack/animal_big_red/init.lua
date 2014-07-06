@@ -22,6 +22,24 @@ local big_red_groups = {
 
 local selectionbox_big_red = {-0.75, -1.9, -0.75, 0.75, 1.9, 0.75}
 
+
+function bigred_drop()
+	local result = {}
+	
+	
+	
+	if math.random() < 0.05 then
+		table.insert(result, "experience:orb_fifty")
+	else 
+		table.insert(result,"nether:nether_apple 10")
+	end
+
+	table.insert(result,"animalmaterials:meat_toxic 3")
+
+	return result
+end
+
+
 big_red_prototype = {
 		name="big_red",
 		modname="animal_big_red",
@@ -37,7 +55,7 @@ big_red_prototype = {
 		generic = {
 					description="Big Red",
 					base_health=8,
-					kill_result="animalmaterials:meat_toxic 3",
+					kill_result = bigred_drop,
 					armor_groups= {
 						fleshy=10,
 						deamon=20,

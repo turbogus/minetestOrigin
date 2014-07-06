@@ -160,14 +160,14 @@ minetest.register_craftitem("animalmaterials:meat_venison", {
 	groups = { meat=1, eatable=1 },
 	stack_max=25
 })
-minetest.register_craftitem("animalmaterials:meat_undead", {
+minetest.register_craftitem("animalmaterials:meat_undead", {	-- A changer
 	description = "Meat (not quite dead)",
 	image = "animalmaterials_meat_raw.png",
 	on_use = minetest.item_eat(-2),
 	groups = { meat=1, eatable=1 },
 	stack_max=5
 })
-minetest.register_craftitem("animalmaterials:meat_toxic", {
+minetest.register_craftitem("animalmaterials:meat_toxic", {		-- A changer
 	description = "Toxic Meat",
 	image = "animalmaterials_meat_raw.png",
 	on_use = minetest.item_eat(-5),
@@ -197,6 +197,26 @@ minetest.register_craftitem("animalmaterials:fish_clownfish", {
 	groups = { meat=1, eatable=1 },
 	stack_max=25
 })
+
+-- Cooked meat 
+minetest.register_craftitem("animalmaterials:cooked_meat", {
+	description = "Monster cooked meet",
+	image = "animalmaterials_meat_cooked.png",
+	on_use = minetest.item_eat(3),
+	groups = { meat=1, eatable=1 },
+	stack_max = 99
+})
+minetest.register_craft({
+	type = "cooking",
+	output = "animalmaterials:cooked_meat",
+	recipe = "animalmaterials:meat_undead",
+})
+minetest.register_craft({
+	type = "cooking",
+	output = "animalmaterials:cooked_meat",
+	recipe = "animalmaterials:meat_toxic",
+})
+
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 -- feather

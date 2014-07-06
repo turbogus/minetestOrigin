@@ -8,9 +8,11 @@
 
 Monstres donnant des points d'expériences :
 
-	* tuer un zombi 
-	* tuer un oerkki 
-	* tuer un dungeons master 
+	* tuer un zombi +1
+	* tuer un oerkki +10 / +20
+	* tuer un dungeons master +50
+	* tuer un bigred : 0 / +50
+	* tuer un creepr : +5
 	
 
 Niveaux de points d'Xp et items correspondants :

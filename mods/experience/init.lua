@@ -255,7 +255,7 @@ end)
 -- taper dessus pour que le point d'XP soit prix en compte dans le compteur d'XP.
 -- L'item est ensuite effaçé pour ne plus être réutilisé.
 --
---Orb donnant 1 pt d'XP
+-- Orb donnant 1 pt d'XP
 minetest.register_node("experience:orb_one", {
 	
 	description = "One orb experience.",
@@ -268,15 +268,9 @@ minetest.register_node("experience:orb_one", {
 	drop = "default:air",
 	groups = {fleshy=3, dig_immediate=3, xp=1},
 })
---[[minetest.register_on_punchnode(function(p, node, player)
-	if node.name == "experience:orb_one" then
-		local pos = player:getpos()
-		minetest.add_entity(pos,"experience:orb")
-		minetest.set_node(pos,"air")
-	end
-end)]]--
 
---Orb donnant 5 pt d'XP
+
+-- Orb donnant 5 pts d'XP
 minetest.register_node("experience:orb_five", {
 	
 	description = "Five orb experience.",
@@ -303,6 +297,54 @@ minetest.register_on_punchnode(function(p, node, player)
 end)
 
 
+-- Orb donnant 10 pts d'XP
+minetest.register_node("experience:orb_ten", {
+	
+	description = "Ten orb experience.",
+	drawtype = "plantlike",
+	tile_images = {"orb_ten.png"},
+	inventory_image = "orb_ten.png",
+	walkable = false,
+	paramtype = "light",
+	sunlight_propagates = true,
+	drop = "default:air",
+	groups = {fleshy=3, dig_immediate=3},
+})
+minetest.register_on_punchnode(function(p, node, player)
+	if node.name == "experience:orb_ten" then
+		local pos = player:getpos()
+		
+		for i = 0, 9 do
+			minetest.add_entity(pos,"experience:orb")
+		end
+		
+	end
+end)
+
+
+-- Orb donnant 50 pts d'XP
+minetest.register_node("experience:orb_fifty", {
+	
+	description = "Fifty orb experience.",
+	drawtype = "plantlike",
+	tile_images = {"orb_fifty.png"},
+	inventory_image = "orb_fifty.png",
+	walkable = false,
+	paramtype = "light",
+	sunlight_propagates = true,
+	drop = "default:air",
+	groups = {fleshy=3, dig_immediate=3},
+})
+minetest.register_on_punchnode(function(p, node, player)
+	if node.name == "experience:orb_fifty" then
+		local pos = player:getpos()
+		
+		for i = 0, 49 do
+			minetest.add_entity(pos,"experience:orb")
+		end
+		
+	end
+end)
 
 
 

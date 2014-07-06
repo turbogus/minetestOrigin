@@ -22,6 +22,24 @@ local dm_groups = {
 
 local selectionbox_dm = {-0.75, -1, -0.75, 0.75, 1, 0.75}
 
+
+function dm_drop()
+	local result = {}
+	
+	
+	
+	if math.random() < 0.05 then
+		table.insert(result,"nether:nether_pearl_fragment")
+	else
+		table.insert(result,"experience:orb_fifty")
+	end
+
+	--table.insert(result,"animalmaterials:meat_undead 1")
+
+	return result
+end
+
+
 dm_prototype = {
 		name="dm",
 		modname="animal_dm",
@@ -36,7 +54,8 @@ dm_prototype = {
 		generic = {
 					description="Dungeonmaster (MOBF)",
 					base_health=30,
-					kill_result="",
+					--kill_result="",
+					kill_result = dm_drop,
 					armor_groups= {
 						fleshy=30,
 						deamon=40,

@@ -22,6 +22,23 @@ local oerkki_groups = {
 
 local selectionbox_oerkki = {-0.75, -1.25, -0.75, 0.75, 0.75, 0.75}
 
+function oerkki_drop()
+	local result = {}
+	
+	
+	
+	if math.random() < 0.03 then
+		table.insert(result,"experience:orb_five 2")
+		
+	else
+		table.insert(result,"experience:orb_five")
+	end
+
+	table.insert(result,"nether:nether_apple")
+
+	return result
+end
+
 oerkki_prototype = {
 		name="oerkki",
 		modname="mob_oerkki",
@@ -36,7 +53,8 @@ oerkki_prototype = {
 		generic = {
 					description="Oerkki",
 					base_health=3,
-					kill_result="animalmaterials:meat_toxic 1",
+					-- kill_result="animalmaterials:meat_toxic 1",
+					kill_result = oerkki_drop,
 					armor_groups= {
 						fleshy=15,
 						deamon=30,

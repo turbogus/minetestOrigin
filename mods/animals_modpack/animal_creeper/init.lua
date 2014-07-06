@@ -23,6 +23,26 @@ local creeper_groups = {
 						
 local selectionbox_creeper = {-1, -1, -1, 1, 1, 1}
 
+
+function creeper_drop()
+	local result = {}
+	
+	
+	
+	if math.random() < 0.05 then
+		table.insert(result,"experience:orb_five")
+		table.insert(result,"tnt:tnt 5")
+	else
+		table.insert(result,"experience:orb_five")
+		table.insert(result, "tnt:gunpowder")
+	end
+
+	--table.insert(result,"animalmaterials:meat_undead 1")
+
+	return result
+end
+
+
 creeper_prototype = {
 		name="creeper",
 		modname="animal_creeper",
@@ -36,7 +56,7 @@ creeper_prototype = {
 		generic = {
 					description="BoomBomb",
 					base_health=3,
-					kill_result="",
+					kill_result = creeper_drop,
 					armor_groups= {
 						monster=90,
 						fleshy=45
