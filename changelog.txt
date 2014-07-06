@@ -21,12 +21,14 @@ MinetestOrigin (v0.0)
 	* potions : modification de la texture du chaudron et ajout de textures : chaudron_top inactif et chaudron_top_actif
 
 
+
 	17/06/2014
 	
 	* ajout du mod pipeworks
 	* ajout du mod snow
 	* modification de l'entete de présentation et de l'icone de game mod
 	* retrait du mod moretrees
+
 	
 
 	18/06/2014
@@ -37,6 +39,7 @@ MinetestOrigin (v0.0)
 	* experience : ajout pour les nodes les points d'experience obtenu.
 	* experience : modification des items obtenu suivant les points d'experience.
 	* remplacement du mod door standard par la version door+
+
 	
 
 	19/06/2014
@@ -63,11 +66,13 @@ MinetestOrigin (v0.0)
 	
 	* magic : tous les crafts de toutes les potions ok !
 	* nether : modification de la texture du netherbook.
+
 	
 	
 	23/06/2014
 	
 	* nether : début de la physique du nether book : transformation des tree et des apples quand on tape dessus avec le netherbook ( à continuer )
+
 	
 	
 	28/06/2014
@@ -77,6 +82,7 @@ MinetestOrigin (v0.0)
 	* suppression de mushroom ( aucune utilité sur la map )
 	* Experience : création d'un item devant être droppé puis punché pour obtenir 1 pt d'XP ( utilisation avec le mod animals )
 				   un zombi rapporte 1 pt d'XP.
+
 	
 	
 	29/06/2014
@@ -88,6 +94,7 @@ MinetestOrigin (v0.0)
 				   
 	* Retrait du mod snow : empeche la génération des plantes de farming plus et de la junglegrass		   
 	* ajout de bones + temps de blocage de l'inventaire à 1min au lieu de 20 min.			   
+	
 	
 	
 	05/07/2014
@@ -102,12 +109,19 @@ MinetestOrigin (v0.0)
 				not qiet dead meat + toxic meat sont cuisinable ( via un four ) pour donner de la cooked meat ( non toxic )
 				
 	* Experience : création des orbs 10 et orbs 50.
+		
 				
 				   
 	06/07/2014	
 	
 	* mesecons : mise à jour du mod ( corrections de bugs )		   
-				   
+	* animals : inventaire du trader complétement revu !
+	* experience : enlevé les items droppé au passage des premier niveaux		   
+	
+	
+	
+	
+	
 				   
 				   
 	
@@ -115,10 +129,10 @@ MinetestOrigin (v0.0)
 
 A finaliser pour la version stable 0.1 :
 
-	* nombres et type de mods définitif
-	* trader : item vendu dans l'inventaire + fixer les prix.
-	* argent : mod pour crafter des pièces de fer et d'or. <-- Remplaçé par le commerce à base de l'ingot de cuivre ( cooper ingot ).
-	* experience : affichage des points d'XP dans le HUD + les monstres doivent dropper de l'XP + redéfinir toutes les actions donnant des pt d'xp.
+	* nombres et type de mods définitif	--OK
+	* trader : item vendu dans l'inventaire + fixer les prix.	--OK
+	* argent : mod pour crafter des pièces de fer et d'or. <-- Remplaçé par le commerce à base de l'ingot de cuivre ( cooper ingot ). --OK
+	* experience : affichage des points d'XP dans le HUD + les monstres doivent dropper de l'XP + redéfinir toutes les actions donnant des pt d'xp. --OK
 
 **********
 
@@ -126,11 +140,6 @@ A prévoir :
 
 	* magic : création de l'enclume permettant la réparation des outils et armure ( moyennant des points d'experience ! )
 	
-	* experience : obtention d'Xp en tuant les monstres du mode animals ( drop de point d'Xp sous form d'item & transformation en lua 
-	entity quand on_drop de l'inventaire.
-	* experience : affichage des points dans l'HUD du joueur.
-	* mob trader : definir les prix et blocs pouvant etre acheté
-	* réglage du biome jungle dans le minetest.conf
 	
 	
  
