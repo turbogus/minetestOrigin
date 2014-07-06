@@ -102,8 +102,11 @@ MinetestOrigin (v0.0)
 				not qiet dead meat + toxic meat sont cuisinable ( via un four ) pour donner de la cooked meat ( non toxic )
 				
 	* Experience : création des orbs 10 et orbs 50.
+				
 				   
-				   
+	06/07/2014	
+	
+	* mesecons : mise à jour du mod ( corrections de bugs )		   
 				   
 				   
 				   
