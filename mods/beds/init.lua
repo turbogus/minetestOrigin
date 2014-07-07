@@ -97,7 +97,7 @@ minetest.register_node("beds:bed_bottom", {
 		end
 
 		if minetest.env:get_timeofday() > 0.2 and minetest.env:get_timeofday() < 0.805 then
-			minetest.chat_send_all("You can only sleep at night")
+			minetest.chat_send_player(clicker:get_player_name(),"You can only sleep at night",true)
 			return
 		else			
 			clicker:set_physics_override(0,0,0)
