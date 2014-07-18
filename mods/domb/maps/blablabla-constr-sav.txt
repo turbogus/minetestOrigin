@@ -1,0 +1,1 @@
+return { { ["y"] = 0, ["x"] = 0, ["z"] = 0, ["m"] = {  }, ["o"] = { ["param1"] = 15, ["name"] = "default:glass", ["param2"] = 0 } } }
