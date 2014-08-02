@@ -86,6 +86,7 @@ if minetest.get_modpath("animalmaterials") ~= nil then
 	overwrite("animalmaterials:meat_ostrich", 3)
 	overwrite("animalmaterials:fish_bluewhite", 2)
 	overwrite("animalmaterials:fish_clownfish", 2)
+	overwrite("animalmaterials:cooked_meat", 5)
 end
 
 if minetest.get_modpath("fishing") ~= nil then
