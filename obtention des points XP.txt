@@ -4,6 +4,7 @@
 	* diamond  
 	* gold  
 	* iron 
+	* copper
 
 
 Monstres donnant des points d'expériences :

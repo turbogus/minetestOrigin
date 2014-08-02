@@ -227,6 +227,7 @@ npc_trader_prototype = {
 							{ "3d_armor:boots_steel 1", "default:copper_ingot 3", nil }, --14 bottes
 							{ "nether:nether_apple 3", "default:copper_ingot 12", nil }, --15 nether apple
 							{ "nether:glowstone_dust 2", "default:copper_ingot 10", nil }, --16 glowglass dust
+							{ "experience:rune_forgeron_n1 1", "default:copper_ingot 15", nil } --runes du forgerons n1
 						},
 				random_names = { "Hans","Franz","Xaver","Fritz","Thomas","Martin"},
 			}

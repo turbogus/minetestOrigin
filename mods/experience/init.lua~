@@ -36,7 +36,7 @@ level10_drop = "default:mese 99"
 
 level1 = 100
 -- level1_drop = "default:steelblock 10"
-level1_drop ="experience:rune_forgeron_n1 1"
+level1_drop = nil
 
 level2 = 200
 -- level2_drop = "default:steelblock 99"
@@ -469,150 +469,23 @@ minetest.register_on_punchnode(function(p, node, player)
 
 end)
 
------------------------------------------------------------------------
------------------------------------------------------------------------
------------------------------------------------------------------------
------------------------------------------------------------------------
 
--- Boite pour faire des enchantements !
---
---
 
--- Craft
 --
-minetest.register_craft({
-	output = 'experience:magic_box',
-	recipe = {
-		{'default:obsidian', 'default:obsidian', 'default:obsidian'},
-		{'default:steel_ingot', 'default:bookshelf', 'default:steel_ingot'},
-		{'default:steel_ingot', 'default:steel_ingot', 'default:steel_ingot'},
-	}
+-- Boite à enchantement !
+--
+minetest.register_node("experience:enchantment_box", {
+	description = "Enchantment box.",
+	tiles = {"enchantment_box.png"},
+	groups = {cracky=3, stone=1},
+	drop = 'default:desert_stone',
+	legacy_mineral = true,
+	sounds = default.node_sound_stone_defaults(),
 })
 
 
--- Déclaration du menu quand on 
--- clique sur le coffre
---
-magic_box_formspec = 
-	"size[8,9]"..
-	--"image[2,2;1,1;default_furnace_fire_bg.png]"..
-	"list[current_name;item;2,3;1,1;]"..
-	"list[current_name;rune;2,1;1,1;]"..
-	"list[current_name;transformation;5,1;2,2;]"..
-	"list[current_player;main;0,5;8,4;]"
 
 
--- Déclaration du node
---
-minetest.register_node("experience:magic_box", {
-	description = "Coffre a Runes",
-	tiles = {"default_obsidian.png", "default_steel_block.png", "default_steel_block.png",
-		"default_steel_block.png", "default_steel_block.png", "default_bookshelf.png"},
-	paramtype2 = "facedir",
-	groups = {crumbly=3, falling_node=1, sand=1},
-	legacy_facedir_simple = true,
-	is_ground_content = false,
-	
-	-- Mise en forme de l'inventaire
-	--
-	on_construct = function(pos)
-		local meta = minetest.get_meta(pos)
-		meta:set_string("formspec", magic_box_formspec)
-		meta:set_string("infotext", "Enchantement")
-		local inv = meta:get_inventory()
-		inv:set_size("item", 1)
-		inv:set_size("rune", 1)
-		inv:set_size("transformation", 1)
-	end,
-	
-	--Peut-être pris seulement si l'inventaire est vide !
-	--
-	can_dig = function(pos,player)
-		local meta = minetest.get_meta(pos);
-		local inv = meta:get_inventory()
-		if not inv:is_empty("item") then
-			return false
-		elseif not inv:is_empty("transformation") then
-			return false
-		elseif not inv:is_empty("rune") then
-			return false
-		end
-		return true
-	end,
-	
-	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
-		local meta = minetest.get_meta(pos)
-		local inv = meta:get_inventory()
-		if listname == "rune" then
-			if minetest.get_craft_result({method="fuel",width=1,items={stack}}).time ~= 0 then
-				if inv:is_empty("item") then
-					meta:set_string("infotext","Aucune runes presentes!")
-				end
-				return stack:get_count()
-			else
-				return 0
-			end
-		elseif listname == "item" then
-			return stack:get_count()
-		elseif listname == "transformation" then
-			return 0
-		end
-	end,
-	
-	--[[allow_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
-		local meta = minetest.get_meta(pos)
-		local inv = meta:get_inventory()
-		local stack = inv:get_stack(from_list, from_index)
-		if to_list == "fuel" then
-			if minetest.get_craft_result({method="fuel",width=1,items={stack}}).time ~= 0 then
-				if inv:is_empty("src") then
-					meta:set_string("infotext","Furnace is empty")
-				end
-				return count
-			else
-				return 0
-			end
-		elseif to_list == "src" then
-			return count
-		elseif to_list == "dst" then
-			return 0
-		end
-	end,]]--
-})
-
-
-------------------------------------------
-------------------------------------------
-
--- Rune du forgerons niveau 1
---
--- Permet de transformer un outil ( pelle, piche, épée, hâche ) en sont équivalent supérieur. 
--- Transformation possible jusqu'a l'outil en fer ( bois --> pierre --> fer )
---
-minetest.register_craftitem("experience:rune_forgeron_n1", {
-	description = "Rune forgeron niveau 1.",
-	inventory_image = "rune_forgeron_n1.png",
-})
-
-
--- Rune du forgerons niveau 2
---
--- 
---
-minetest.register_craftitem("experience:rune_forgeron_n2", {
-	description = "Rune forgeron niveau 2.",
-	inventory_image = "rune_forgeron_n2.png",
-})
-
-
--- Rune du forgerons niveau 3
---
--- 
---
-minetest.register_craftitem("experience:rune_forgeron_n3", {
-	description = "Rune forgeron niveau 3.",
-	inventory_image = "rune_forgeron_n3.png",
-})
 
 
 

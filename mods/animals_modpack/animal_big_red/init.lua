@@ -30,8 +30,9 @@ function bigred_drop()
 	
 	if math.random() < 0.05 then
 		table.insert(result, "experience:orb_fifty")
+		table.insert(result, "nether:nether_apple 10")
 	else 
-		table.insert(result,"nether:nether_apple 10")
+		table.insert(result, "experience:orb_fifty")
 	end
 
 	table.insert(result,"animalmaterials:meat_toxic 3")

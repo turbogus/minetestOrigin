@@ -120,10 +120,49 @@ MinetestOrigin (v0.0)
 	
 	
 	
+	18/07/2014
+	
+	* Ajout du mod craftguide
+	* Suppression de zcg
 	
 	
+	21/07/2014
+	
+	* animals : Le Big red donne 50 pt d'experience dans tous les cas.
+	
+	
+	23/07/2014
+	
+	* experience : Création de la boite à runes et des 3 premieres runes du forgerons.
+	
+	02/08/2014 :
+	* animals trader : ajout de la rune du forgeron n1 à acheter ( 15 copper ingots )
+	* experience : obtention d'une rune du forgeron n1 à 100 pt d'xp.
+	
+
+**********
+
+A prévoir :
+	
+	* creation d'un saut en bois capable de prendre uniquement de l'eau
+	* le bigred de animals doit impérativement donner des points d'Xp et un autre élement. --OK
+	* utiliser une runes spécifiques et/ou consommation des points d'Xp quand on craft des outils en or et en diamant ( ou si ok : utilisation d'une table de craft spécifique ! )
+	* suite à test de la fonction "on_craft", enelver des points d'Xp quand on presse des pommes du nether.
+	* tableaux des potions ?
+	* Création du principe des enchantements avec les runes ( + tableau des runes ? )
+	* test de la fonction "on_craft" pour pouvoir enlever des point d'Xp lors de crafts spéciaux.
+	* création d'un menu fonctionnel !
+	* magic : création de l'enclume permettant la réparation des outils et armure ( moyennant des points d'experience ! )
+		
+
+**********
 				   
-				   
+A faire / finaliser pour la version stable 0.2
+
+	* Premiere runes pour les enchantements
+	* consommation des points d'Xp avec utilisation des enchantements.
+	* consomnation des points d'Xp quand craft des potions
+	* consommation des points d'Xp ou obligation d'utilisation d'une runes spécifiques pour le craft des outils en or et en diamant !				   
 	
 **********
 
@@ -134,12 +173,9 @@ A finaliser pour la version stable 0.1 :
 	* argent : mod pour crafter des pièces de fer et d'or. <-- Remplaçé par le commerce à base de l'ingot de cuivre ( cooper ingot ). --OK
 	* experience : affichage des points d'XP dans le HUD + les monstres doivent dropper de l'XP + redéfinir toutes les actions donnant des pt d'xp. --OK
 
-**********
 
-A prévoir :
 
-	* magic : création de l'enclume permettant la réparation des outils et armure ( moyennant des points d'experience ! )
-	
+
 	
 	
  
