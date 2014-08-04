@@ -697,7 +697,7 @@ minetest.register_node( "nether:glowstone", {
 	light_source = 15, -- Like in Minecraft
 	inventory_inventory_image = minetest.inventorycube( "nether_glowstone.png" ),
 	is_ground_content = true,
-	groups = {snappy=2, choppy=2, oddly_breakable_by_hand = 1.5, xp=1},
+	groups = {snappy=2, choppy=2, oddly_breakable_by_hand = 1.5},
 	drop = "nether:glowstone_dust 4",
 })
 minetest.register_craft({

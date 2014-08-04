@@ -11,6 +11,9 @@
 -- godkiller447 (ideas)
 -- If I didn't list you, please let me know!
 
+--Alias for obsidian
+--minetest.register_alias("obsidian:obsidian_block", "default:obsidian")
+
 --== EDITABLE OPTIONS ==--
 
 -- Depth of the nether
@@ -240,58 +243,58 @@ HADES_THRONE = {
 -- Structure of the nether portal (all is relative to the nether portal creator block)
 NETHER_PORTAL = {
 	-- Floor 1
-	{pos={x=0,y=0,z=0}, block="obsidian:obsidian_block"},
-	{pos={x=1,y=0,z=0}, block="obsidian:obsidian_block"},
-	{pos={x=2,y=0,z=0}, block="obsidian:obsidian_block"},
-	{pos={x=3,y=0,z=0}, block="obsidian:obsidian_block"},
-	{pos={x=0,y=0,z=1}, block="obsidian:obsidian_block"},
-	{pos={x=1,y=0,z=1}, block="obsidian:obsidian_block"},
-	{pos={x=2,y=0,z=1}, block="obsidian:obsidian_block"},
-	{pos={x=3,y=0,z=1}, block="obsidian:obsidian_block"},
-	{pos={x=0,y=0,z=-1}, block="obsidian:obsidian_block"},
-	{pos={x=1,y=0,z=-1}, block="obsidian:obsidian_block"},
-	{pos={x=2,y=0,z=-1}, block="obsidian:obsidian_block"},
-	{pos={x=3,y=0,z=-1}, block="obsidian:obsidian_block"},
+	{pos={x=0,y=0,z=0}, block="default:obsidian"},
+	{pos={x=1,y=0,z=0}, block="default:obsidian"},
+	{pos={x=2,y=0,z=0}, block="default:obsidian"},
+	{pos={x=3,y=0,z=0}, block="default:obsidian"},
+	{pos={x=0,y=0,z=1}, block="default:obsidian"},
+	{pos={x=1,y=0,z=1}, block="default:obsidian"},
+	{pos={x=2,y=0,z=1}, block="default:obsidian"},
+	{pos={x=3,y=0,z=1}, block="default:obsidian"},
+	{pos={x=0,y=0,z=-1}, block="default:obsidian"},
+	{pos={x=1,y=0,z=-1}, block="default:obsidian"},
+	{pos={x=2,y=0,z=-1}, block="default:obsidian"},
+	{pos={x=3,y=0,z=-1}, block="default:obsidian"},
 	-- Floor 2
-	{pos={x=0,y=1,z=0}, block="obsidian:obsidian_block"},
+	{pos={x=0,y=1,z=0}, block="default:obsidian"},
 	{pos={x=1,y=1,z=0}, block="nether:nether_portal"},
 	{pos={x=2,y=1,z=0}, block="nether:nether_portal"},
-	{pos={x=3,y=1,z=0}, block="obsidian:obsidian_block"},
-	{pos={x=0,y=1,z=1}, block="obsidian:obsidian_block"},
-	{pos={x=3,y=1,z=1}, block="obsidian:obsidian_block"},
-	{pos={x=0,y=1,z=-1}, block="obsidian:obsidian_block"},
-	{pos={x=3,y=1,z=-1}, block="obsidian:obsidian_block"},
+	{pos={x=3,y=1,z=0}, block="default:obsidian"},
+	{pos={x=0,y=1,z=1}, block="default:obsidian"},
+	{pos={x=3,y=1,z=1}, block="default:obsidian"},
+	{pos={x=0,y=1,z=-1}, block="default:obsidian"},
+	{pos={x=3,y=1,z=-1}, block="default:obsidian"},
 	-- Floor 3
-	{pos={x=0,y=2,z=0}, block="obsidian:obsidian_block"},
+	{pos={x=0,y=2,z=0}, block="default:obsidian"},
 	{pos={x=1,y=2,z=0}, block="nether:nether_portal"},
 	{pos={x=2,y=2,z=0}, block="nether:nether_portal"},
-	{pos={x=3,y=2,z=0}, block="obsidian:obsidian_block"},
-	{pos={x=0,y=2,z=1}, block="obsidian:obsidian_block"},
-	{pos={x=3,y=2,z=1}, block="obsidian:obsidian_block"},
-	{pos={x=0,y=2,z=-1}, block="obsidian:obsidian_block"},
-	{pos={x=3,y=2,z=-1}, block="obsidian:obsidian_block"},
+	{pos={x=3,y=2,z=0}, block="default:obsidian"},
+	{pos={x=0,y=2,z=1}, block="default:obsidian"},
+	{pos={x=3,y=2,z=1}, block="default:obsidian"},
+	{pos={x=0,y=2,z=-1}, block="default:obsidian"},
+	{pos={x=3,y=2,z=-1}, block="default:obsidian"},
 	-- Floor 4
-	{pos={x=0,y=3,z=0}, block="obsidian:obsidian_block"},
+	{pos={x=0,y=3,z=0}, block="default:obsidian"},
 	{pos={x=1,y=3,z=0}, block="nether:nether_portal"},
 	{pos={x=2,y=3,z=0}, block="nether:nether_portal"},
-	{pos={x=3,y=3,z=0}, block="obsidian:obsidian_block"},
-	{pos={x=0,y=3,z=1}, block="obsidian:obsidian_block"},
-	{pos={x=3,y=3,z=1}, block="obsidian:obsidian_block"},
-	{pos={x=0,y=3,z=-1}, block="obsidian:obsidian_block"},
-	{pos={x=3,y=3,z=-1}, block="obsidian:obsidian_block"},
+	{pos={x=3,y=3,z=0}, block="default:obsidian"},
+	{pos={x=0,y=3,z=1}, block="default:obsidian"},
+	{pos={x=3,y=3,z=1}, block="default:obsidian"},
+	{pos={x=0,y=3,z=-1}, block="default:obsidian"},
+	{pos={x=3,y=3,z=-1}, block="default:obsidian"},
 	-- Floor 5
-	{pos={x=0,y=4,z=0}, block="obsidian:obsidian_block"},
-	{pos={x=1,y=4,z=0}, block="obsidian:obsidian_block"},
-	{pos={x=2,y=4,z=0}, block="obsidian:obsidian_block"},
-	{pos={x=3,y=4,z=0}, block="obsidian:obsidian_block"},
-	{pos={x=0,y=4,z=1}, block="obsidian:obsidian_block"},
-	{pos={x=1,y=4,z=1}, block="obsidian:obsidian_block"},
-	{pos={x=2,y=4,z=1}, block="obsidian:obsidian_block"},
-	{pos={x=3,y=4,z=1}, block="obsidian:obsidian_block"},
-	{pos={x=0,y=4,z=-1}, block="obsidian:obsidian_block"},
-	{pos={x=1,y=4,z=-1}, block="obsidian:obsidian_block"},
-	{pos={x=2,y=4,z=-1}, block="obsidian:obsidian_block"},
-	{pos={x=3,y=4,z=-1}, block="obsidian:obsidian_block"},
+	{pos={x=0,y=4,z=0}, block="default:obsidian"},
+	{pos={x=1,y=4,z=0}, block="default:obsidian"},
+	{pos={x=2,y=4,z=0}, block="default:obsidian"},
+	{pos={x=3,y=4,z=0}, block="default:obsidian"},
+	{pos={x=0,y=4,z=1}, block="default:obsidian"},
+	{pos={x=1,y=4,z=1}, block="default:obsidian"},
+	{pos={x=2,y=4,z=1}, block="default:obsidian"},
+	{pos={x=3,y=4,z=1}, block="default:obsidian"},
+	{pos={x=0,y=4,z=-1}, block="default:obsidian"},
+	{pos={x=1,y=4,z=-1}, block="default:obsidian"},
+	{pos={x=2,y=4,z=-1}, block="default:obsidian"},
+	{pos={x=3,y=4,z=-1}, block="default:obsidian"},
 }
 
 --== END OF EDITABLE OPTIONS ==--
@@ -465,7 +468,16 @@ minetest.register_node("nether:nether_apple", {
 	groups = {fleshy=3, dig_immediate=3},
 	on_use = minetest.item_eat(-4),
 	sounds = default.node_sound_defaults(),
+
 })
+
+-- Nether apple juice
+minetest.register_craftitem("nether:nether_apple_juice", {
+	description = "Nether Apple Juice",
+	wield_image = "nether_apple_juice.png",
+	inventory_image = "nether_apple_juice.png",
+})
+
 
 -- Nether torch
 minetest.register_node("nether:nether_torch", {
@@ -514,6 +526,16 @@ minetest.register_node("nether:nether_torch_bottom", {
 	sounds = default.node_sound_defaults(),
 })
 
+-- Nether Pearl fragment
+minetest.register_craftitem("nether:nether_pearl_fragment", {
+	description = "Nether Pearl fragment",
+	wield_image = "nether_pearl_fragment.png",
+	inventory_image = "nether_pearl_fragment.png",
+	visual = "sprite",
+	physical = true,
+	textures = {"nether_pearl_fragment.png"},
+})
+
 -- Nether Pearl
 minetest.register_craftitem("nether:nether_pearl", {
 	description = "Nether Pearl",
@@ -524,6 +546,150 @@ minetest.register_craftitem("nether:nether_pearl", {
 	textures = {"nether_pearl.png"},
 })
 
+minetest.register_craft({
+	output = "nether:nether_pearl",
+	recipe = {
+		{"nether:nether_pearl_fragment", "nether:nether_pearl_fragment", "nether:nether_pearl_fragment"},
+		{"nether:nether_pearl_fragment", "nether:nether_pearl_fragment", "nether:nether_pearl_fragment"},
+		{"nether:nether_pearl_fragment", "nether:nether_pearl_fragment", "nether:nether_pearl_fragment"},
+	}
+})
+
+-- Nether Pearl
+minetest.register_craftitem("nether:nether_pearl", {
+	description = "Nether Pearl",
+	wield_image = "nether_pearl.png",
+	inventory_image = "nether_pearl.png",
+	visual = "sprite",
+	physical = true,
+	textures = {"nether_pearl.png"},
+})
+
+
+-- Nether Book
+-- livre magique necessaire pour créer les potions de niveau 2 ( les plus puissantes !)
+-- Est une arme redoutable : tue un ennemie en 1 seul coup mais inflige des dommages à l'utilisateur ( si utiliser comme une arme )
+-- Et à chaque utilisation, consomme des points d'Xp du joueur.
+minetest.register_tool("nether:nether_book", {
+	description = "Nether Book",
+	wield_image = "nether_book.png",
+	inventory_image = "nether_book.png",
+	tool_capabilities = {
+		full_punch_interval = 0.7,
+		max_drop_level=1,
+		groupcaps={
+			snappy={times={[1]=1.90, [2]=0.90, [3]=0.30}, uses=40, maxlevel=3},
+		},
+		damage_groups = {fleshy=10},
+	}
+})
+
+
+
+
+
+
+
+
+
+
+
+
+-- Nether Book physique
+-- Transforme les items du monde standard en item du monde du nether quand on clic dessus !
+-- 
+
+-- DEPLAÇÉ DANS LE MOD EXPERIENCE POUR FACILITER LA GESTION DES POINT D'XP
+--[[
+minetest.register_on_punchnode(function(p, node, player)
+	
+	-- Lecture du nombre de point d'experience du joueur
+	xp_read = io.open(minetest.get_worldpath().."/"..player:get_player_name().."_experience", "r")
+	experience = xp_read:read("*n")		--NB : on utilise ("*n") pour spécifier que l'on lit un nombre et pas un string
+	xp_read:close()
+	
+	--
+	-- Replacement de tree par le nether tree
+	--
+	if node.name == "default:tree" and player:get_wielded_item():get_name() == "nether:nether_book" and experience > 0 then
+		
+		-- transformation du tree en nether_tree
+		minetest.env:add_node(p,{name="nether:nether_tree"})
+		
+		-- on retire un 5 points d'experience au joueur	
+		experience = experience - 5
+		
+		-- si après soustraction, le nombre de point est négatif, on mes à 0 et le joueur perd 1/2 point de vie !
+		if experience <= 0 then
+			experience = 0
+			player:set_hp(player:get_hp()-0.5)
+		end
+		
+		-- on écrit dans le fichier le nouveau nombre de point d'experience
+		xp_write = io.open(minetest.get_worldpath().."/"..player:get_player_name().."_experience", "w")
+		xp_write:write(experience)
+		xp_write:close()
+		
+	end
+	
+	--
+	-- Remplacement des apples par des nether apple
+	--
+	if node.name == "default:apple" and player:get_wielded_item():get_name() == "nether:nether_book" and experience > 0 then
+	
+		-- transformation de la pomme en pomme du nether
+		minetest.env:add_node(p,{name="nether:nether_apple"})
+		
+		-- on retire un 5 points d'experience au joueur	
+		experience = experience - 5
+		
+		-- si après soustraction, le nombre de point est négatif, on mes à 0 et le joueur perd 1/2 point de vie !
+		if experience <= 0 then
+			experience = 0
+			player:set_hp(player:get_hp()-0.5)
+		end
+		
+		-- on écrit dans le fichier le nouveau nombre de point d'experience
+		xp_write = io.open(minetest.get_worldpath().."/"..player:get_player_name().."_experience", "w")
+		xp_write:write(experience)
+		xp_write:close()	
+	end
+
+
+	--
+	-- Si plus de point d'Xp, alors perte de -1/2 Hp à chaque utilisation !!!
+	--
+	if player:get_wielded_item():get_name() == "nether:nether_book" and experience <= 0 then
+		player:set_hp(player:get_hp()-0.5)
+	end
+
+end)
+
+]]--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- Nether GLowstone dust
+minetest.register_craftitem("nether:glowstone_dust", {
+	description = "Glowstone dust",
+	wield_image = "nether_glowstone_dust.png",
+	inventory_image = "nether_glowstone_dust.png",
+	visual = "sprite",
+	physical = true,
+	textures = {"nether_glowstone_dust.png"},
+})
+
 -- Nether Glowstone (Thanks to Gilli)
 minetest.register_node( "nether:glowstone", { 
 	description = "Nether Glowstone",
@@ -531,8 +697,17 @@ minetest.register_node( "nether:glowstone", {
 	light_source = 15, -- Like in Minecraft
 	inventory_inventory_image = minetest.inventorycube( "nether_glowstone.png" ),
 	is_ground_content = true,
-	groups = {snappy=2, choppy=2, oddly_breakable_by_hand = 1.5},
+	groups = {snappy=2, choppy=2, oddly_breakable_by_hand = 1.5, xp=1},
+	drop = "nether:glowstone_dust 4",
 })
+minetest.register_craft({
+	output = "nether:glowstone",
+	recipe = {
+		{"nether:glowstone_dust", "nether:glowstone_dust"},
+		{"nether:glowstone_dust", "nether:glowstone_dust"},
+	}
+})
+
 
 -- Create the Nether
 minetest.register_on_generated(function(minp, maxp)
@@ -903,7 +1078,7 @@ function nether:createportal(pos)
 		curry = v.pos.y + pos.y
 		currz = v.pos.z + pos.z
 		currpos = {x=currx, y=curry, z=currz}
-		minetest.env:add_node(v.pos, {name=v.block})
+		minetest.env:add_node(currpos, {name=v.block})
 	end
 end
 
@@ -983,12 +1158,25 @@ minetest.register_abm({
 })
 
 -- CRAFTING DEFINITIONS
+--[[
 minetest.register_craft({
 	output = "nether:nether_portal_creator",
 	recipe = {
 		{"obsidian:obsidian_block", "obsidian:obsidian_block", "obsidian:obsidian_block"},
 		{"obsidian:obsidian_block", "nether:nether_pearl", "obsidian:obsidian_block"},
 		{"obsidian:obsidian_block", "obsidian:obsidian_block", "obsidian:obsidian_block"},
+	}
+})
+
+print("Nether mod loaded!")
+]]--
+
+minetest.register_craft({
+	output = "nether:nether_portal_creator",
+	recipe = {
+		{"default:obsidian", "default:obsidian", "default:obsidian"},
+		{"default:obsidian", "nether:nether_pearl", "default:obsidian"},
+		{"default:obsidian", "default:obsidian", "default:obsidian"},
 	}
 })
 
