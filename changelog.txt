@@ -163,7 +163,7 @@ A prévoir :
 	* utiliser une runes spécifiques et/ou consommation des points d'Xp quand on craft des outils en or et en diamant ( ou si ok : utilisation d'une table de craft spécifique ! )
 	* suite à test de la fonction "on_craft", enelver des points d'Xp quand on presse des pommes du nether.
 	* tableaux des potions ?
-	* Création du principe des enchantements avec les runes ( + tableau des runes ? )
+	* Création du principe des enchantements avec les runes ( + tableau des runes ? ) --ok
 	* test de la fonction "on_craft" pour pouvoir enlever des point d'Xp lors de crafts spéciaux.
 	* création d'un menu fonctionnel !
 	* magic : création de l'enclume permettant la réparation des outils et armure ( moyennant des points d'experience ! )
