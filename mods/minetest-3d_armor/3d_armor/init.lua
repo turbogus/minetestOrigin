@@ -189,7 +189,10 @@ end
 -- Register Craft Recipies
 
 local craft_ingreds = {
-	wood = "default:wood",
+	--wood = "default:wood",
+	wood = "animalmaterials:fur",
+	wood = "animalmaterials:fur_deer",
+	wood = "animalmaterials:coat_cattle",
 	steel = "default:steel_ingot",
 	bronze = "default:bronze_ingot",
 	diamond = "default:diamond",
