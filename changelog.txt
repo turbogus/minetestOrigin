@@ -1,6 +1,6 @@
-MinetestOrigin (v0.0)
+MinetestOrigin (v0.1)
 
-	07/06/2014
+	07/06/2014 :
 	
 	* bed : modification du craft.
 	* ajout du submodule potionpack ( déclaration des potions du mod potion ).
@@ -14,7 +14,7 @@ MinetestOrigin (v0.0)
 	
 	
 
-	08/06/2014
+	08/06/2014 :
 	
 	* vessel : ajout d'un fiole remplie d'eau ( on rempli avec un saut d'eau ). 
 	* potions : ajout de la potion de base pour créer les autres potions.
@@ -22,7 +22,7 @@ MinetestOrigin (v0.0)
 
 
 
-	17/06/2014
+	17/06/2014 :
 	
 	* ajout du mod pipeworks
 	* ajout du mod snow
@@ -31,7 +31,7 @@ MinetestOrigin (v0.0)
 
 	
 
-	18/06/2014
+	18/06/2014 :
 	
 	* nether : ajout des mese fragments ( 9 fragments = 1 nether pearl )
 	* nether : ajout du mether book ( nécessaire pour la création des potions de niveau 2 et les enchantements ).
@@ -42,7 +42,7 @@ MinetestOrigin (v0.0)
 
 	
 
-	19/06/2014
+	19/06/2014 :
 	
 	* nether : création de la poudre de glowstone ( pour améliration des potions ). Obtenu quand minage d'un bloc de glowstone ( x4 ).
 			   4 boules de poudre de glowstone reforme une glowstone.
@@ -51,7 +51,7 @@ MinetestOrigin (v0.0)
 
 
 		
-	21/06/2014
+	21/06/2014 :
 	
 	* vessels/nether/magic : armonisation des textures des bouteilles avec les textures de potions + astuce : pour reconnaitre les potions :
 							 les potions craftées possède un bouchon
@@ -62,20 +62,20 @@ MinetestOrigin (v0.0)
 	
 	
 	
-	22/06/2014
+	22/06/2014 :
 	
 	* magic : tous les crafts de toutes les potions ok !
 	* nether : modification de la texture du netherbook.
 
 	
 	
-	23/06/2014
+	23/06/2014 :
 	
 	* nether : début de la physique du nether book : transformation des tree et des apples quand on tape dessus avec le netherbook ( à continuer )
 
 	
 	
-	28/06/2014
+	28/06/2014 :
 	
 	* ajout du mod crafting_pack ( inventaire et table de travail comme minecraft ) : bonne surprise : fait moin lagger le jeu car pas de gestion de transparence
 	  dans le menu !  
@@ -85,7 +85,7 @@ MinetestOrigin (v0.0)
 
 	
 	
-	29/06/2014
+	29/06/2014 :
 	
 	* Experience : changement de nom pour les items poit d'XP
 				   ajout de l'item orb_five qui donne 5 points d'XP.
@@ -97,7 +97,7 @@ MinetestOrigin (v0.0)
 	
 	
 	
-	05/07/2014
+	05/07/2014 :
 	
 	* Animals : oerkki donne 10 - 20 pts d'XP ou 10 nether apple.
 				Dongeon master donne 50 pts d'XP ou 50 pts d'XP + un neher pearl fragment.
@@ -112,7 +112,7 @@ MinetestOrigin (v0.0)
 		
 				
 				   
-	06/07/2014	
+	06/07/2014 :	
 	
 	* mesecons : mise à jour du mod ( corrections de bugs )		   
 	* animals : inventaire du trader complétement revu !
@@ -120,7 +120,7 @@ MinetestOrigin (v0.0)
 	
 	
 	
-	18/07/2014
+	18/07/2014 :
 	
 	* Ajout du mod craftguide
 	* Suppression de zcg
@@ -131,13 +131,28 @@ MinetestOrigin (v0.0)
 	* animals : Le Big red donne 50 pt d'experience dans tous les cas.
 	
 	
-	23/07/2014
+	23/07/2014 :
 	
 	* experience : Création de la boite à runes et des 3 premieres runes du forgerons.
 	
 	02/08/2014 :
+	
 	* animals trader : ajout de la rune du forgeron n1 à acheter ( 15 copper ingots )
 	* experience : obtention d'une rune du forgeron n1 à 100 pt d'xp.
+	
+	
+	20/08/2014 :
+
+	* beds : marche en multi comme point de spawn.
+	* default : tree donne du coal quand cuit dans un four.
+	
+	* animals material : toutes les viandes peuvent etre cuite et rapporte plus de point d'HP.
+	* wombi : donne 5pt d'XP avec de la chance ! + augmenter l'agressivité et le max damage des attaques.
+	* BigRed : commentée "harvest" (fonction empechant de le tuer avec des outils).
+
+	* hunger : baissé la perte d'1/2 coeur à 90s au lieu de 120s.
+
+	* 3d_armor : remplaçé l'armure en bois en armure en cuire (craftable avec toutes les peau de bete de animals material). !!!Atester IN GAME!!!
 	
 
 **********
@@ -145,7 +160,6 @@ MinetestOrigin (v0.0)
 A prévoir :
 	
 	* creation d'un saut en bois capable de prendre uniquement de l'eau
-	* le bigred de animals doit impérativement donner des points d'Xp et un autre élement. --OK
 	* utiliser une runes spécifiques et/ou consommation des points d'Xp quand on craft des outils en or et en diamant ( ou si ok : utilisation d'une table de craft spécifique ! )
 	* suite à test de la fonction "on_craft", enelver des points d'Xp quand on presse des pommes du nether.
 	* tableaux des potions ?
@@ -159,28 +173,10 @@ A prévoir :
 				   
 A faire / finaliser pour la version stable 0.2
 
-	* Premiere runes pour les enchantements
+	* Premiere runes pour les enchantements --OK
 	* consommation des points d'Xp avec utilisation des enchantements.
-	* consomnation des points d'Xp quand craft des potions
-	* consommation des points d'Xp ou obligation d'utilisation d'une runes spécifiques pour le craft des outils en or et en diamant !				   
+	* consomnation des points d'Xp quand craft des potions --annulé
+	* consommation des points d'Xp ou obligation d'utilisation d'une runes spécifiques pour le craft des outils en or et en diamant ! --en standby			   
 	
-**********
 
-A finaliser pour la version stable 0.1 :
-
-	* nombres et type de mods définitif	--OK
-	* trader : item vendu dans l'inventaire + fixer les prix.	--OK
-	* argent : mod pour crafter des pièces de fer et d'or. <-- Remplaçé par le commerce à base de l'ingot de cuivre ( cooper ingot ). --OK
-	* experience : affichage des points d'XP dans le HUD + les monstres doivent dropper de l'XP + redéfinir toutes les actions donnant des pt d'xp. --OK
-
-
-
-
-	
-	
- 
- NB :
- 
-	* minetest origin doit être aussi prenant que minecraft mais beaucoup plus léger !
- 
  
