@@ -73,13 +73,13 @@ big_red_prototype = {
 					canfly=false,
 					follow_speedup=30,
 					},
-		harvest = {	
+	--[[	harvest = {	
 					tool="",
 					tool_consumed=false,
 					result="", 
 					transforms_to="",
 					min_delay=-1,
-					},
+					},]]--
 		combat = {
 					angryness=0.95,
 					starts_attack=true,
@@ -103,7 +103,7 @@ big_red_prototype = {
 						rate=0.01,
 						density=1000,
 						algorithm="shadows_spawner",
-						height=4,
+						height=3, --ancien : 4
 						respawndelay = 60,
 						},
 					}

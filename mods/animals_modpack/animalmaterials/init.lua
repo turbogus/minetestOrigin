@@ -118,42 +118,42 @@ minetest.register_craftitem("animalmaterials:contract", {
 --
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
-minetest.register_craftitem("animalmaterials:meat_raw", {
+minetest.register_craftitem("animalmaterials:meat_raw", { --1
 	description = "Raw meat",
 	image = "animalmaterials_meat_raw.png",
 	on_use = minetest.item_eat(1),
 	groups = { meat=1, eatable=1 },
 	stack_max=25
 })
-minetest.register_craftitem("animalmaterials:meat_pork", {
+minetest.register_craftitem("animalmaterials:meat_pork", { --2
 	description = "Pork (raw)",
 	image = "animalmaterials_meat_raw.png",
 	on_use = minetest.item_eat(1),
 	groups = { meat=1, eatable=1 },
 	stack_max=25
 })
-minetest.register_craftitem("animalmaterials:meat_beef", {
+minetest.register_craftitem("animalmaterials:meat_beef", {  --3
 	description = "Beef (raw)",
 	image = "animalmaterials_meat_raw.png",
 	on_use = minetest.item_eat(1),
 	groups = { meat=1, eatable=1 },
 	stack_max=25
 })
-minetest.register_craftitem("animalmaterials:meat_chicken", {
+minetest.register_craftitem("animalmaterials:meat_chicken", {  --4
 	description = "Chicken (raw)",
 	image = "animalmaterials_meat_raw.png",
 	on_use = minetest.item_eat(1),
 	groups = { meat=1, eatable=1 },
 	stack_max=25
 })
-minetest.register_craftitem("animalmaterials:meat_lamb", {
+minetest.register_craftitem("animalmaterials:meat_lamb", { --5
 	description = "Lamb (raw)",
 	image = "animalmaterials_meat_raw.png",
 	on_use = minetest.item_eat(1),
 	groups = { meat=1, eatable=1 },
 	stack_max=25
 })
-minetest.register_craftitem("animalmaterials:meat_venison", {
+minetest.register_craftitem("animalmaterials:meat_venison", { --6
 	description = "Venison (raw)",
 	image = "animalmaterials_meat_raw.png",
 	on_use = minetest.item_eat(1),
@@ -174,7 +174,7 @@ minetest.register_craftitem("animalmaterials:meat_toxic", {		-- A changer
 	groups = { meat=1, eatable=1 },
 	stack_max=5
 })
-minetest.register_craftitem("animalmaterials:meat_ostrich", {
+minetest.register_craftitem("animalmaterials:meat_ostrich", { --7
 	description = "Ostrich Meat",
 	image = "animalmaterials_meat_raw.png",
 	on_use = minetest.item_eat(3),
@@ -182,30 +182,39 @@ minetest.register_craftitem("animalmaterials:meat_ostrich", {
 	stack_max=5
 })
 
-minetest.register_craftitem("animalmaterials:fish_bluewhite", {
+minetest.register_craftitem("animalmaterials:fish_bluewhite", { --8
 	description = "Fish (bluewhite)",
 	image = "animalmaterials_meat_raw.png",
-	on_use = minetest.item_eat(1),
+	on_use = minetest.item_eat(0),
 	groups = { meat=1, eatable=1 },
 	stack_max=25
 })
 
-minetest.register_craftitem("animalmaterials:fish_clownfish", {
+minetest.register_craftitem("animalmaterials:fish_clownfish", { --9
 	description = "Fish (clownfish)",
 	image = "animalmaterials_meat_raw.png",
-	on_use = minetest.item_eat(1),
+	on_use = minetest.item_eat(0),
 	groups = { meat=1, eatable=1 },
 	stack_max=25
 })
 
+--===========================
+
+
 -- Cooked meat 
+--
+-- Déclaration de l'item (nb : donne 4 points d'Xp) 
+--
 minetest.register_craftitem("animalmaterials:cooked_meat", {
 	description = "Monster cooked meet",
 	image = "animalmaterials_meat_cooked.png",
-	on_use = minetest.item_eat(3),
+	on_use = minetest.item_eat(4),
 	groups = { meat=1, eatable=1 },
 	stack_max = 99
 })
+
+-- Déclaration des cuissons
+--
 minetest.register_craft({
 	type = "cooking",
 	output = "animalmaterials:cooked_meat",
@@ -216,6 +225,62 @@ minetest.register_craft({
 	output = "animalmaterials:cooked_meat",
 	recipe = "animalmaterials:meat_toxic",
 })
+--1
+minetest.register_craft({
+	type = "cooking",
+	output = "animalmaterials:cooked_meat",
+	recipe = "animalmaterials:meat_raw",
+})
+--2
+minetest.register_craft({
+	type = "cooking",
+	output = "animalmaterials:cooked_meat",
+	recipe = "animalmaterials:meat_pork",
+})
+--3
+minetest.register_craft({
+	type = "cooking",
+	output = "animalmaterials:cooked_meat",
+	recipe = "animalmaterials:meat_beef",
+})
+--4
+minetest.register_craft({
+	type = "cooking",
+	output = "animalmaterials:cooked_meat",
+	recipe = "animalmaterials:meat_chicken",
+})
+--5
+minetest.register_craft({
+	type = "cooking",
+	output = "animalmaterials:cooked_meat",
+	recipe = "animalmaterials:meat_lamb",
+})
+--6
+minetest.register_craft({
+	type = "cooking",
+	output = "animalmaterials:cooked_meat",
+	recipe = "animalmaterials:meat_venison",
+})
+--7
+minetest.register_craft({
+	type = "cooking",
+	output = "animalmaterials:cooked_meat",
+	recipe = "animalmaterials:meat_ostrich",
+})
+--8
+minetest.register_craft({
+	type = "cooking",
+	output = "animalmaterials:cooked_meat",
+	recipe = "animalmaterials:fish_bluewhite",
+})
+--9
+minetest.register_craft({
+	type = "cooking",
+	output = "animalmaterials:cooked_meat",
+	recipe = "animalmaterials:fish_clownfish",
+})
+
+--==========================
 
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------

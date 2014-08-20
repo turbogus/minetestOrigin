@@ -19,6 +19,7 @@ function vombie_drop()
 	
 	if math.random() < 0.05 then
 		table.insert(result,"animalmaterials:bone 2")
+		table.insert(result,"experience:orb_five")
 		
 	else
 		table.insert(result,"animalmaterials:bone 1")
@@ -105,7 +106,7 @@ vombie_prototype = {
 
 		generic = {
 					description="Vombie",
-					base_health=8,
+					base_health=20,  --ancien : 8
 					kill_result=vombie_drop,
 					armor_groups= {
 						fleshy=95,
@@ -126,11 +127,11 @@ vombie_prototype = {
 					follow_speedup=20,
 					},
 		combat = {
-					angryness=1,
+					angryness=3, --ancien : 1
 					starts_attack=true,
 					sun_sensitive=true,
 					melee = {
-						maxdamage=2,
+						maxdamage=3, --ancien 2
 						range=2,
 						speed=1,
 						},
