@@ -571,6 +571,12 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "cooking",
+	output = "default:coal_lump",
+	recipe = "group:tree",
+})
+
+minetest.register_craft({
+	type = "cooking",
 	output = "default:obsidian_glass",
 	recipe = "default:obsidian_shard",
 })
