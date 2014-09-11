@@ -581,40 +581,6 @@ minetest.register_node("experience:magic_box", {
 })
 
 
-------------------------------------------
-------------------------------------------
-
--- Rune du forgerons niveau 1
---
--- Permet de transformer un outil ( pelle, piche, épée, hâche ) en sont équivalent supérieur. 
--- Transformation possible jusqu'a l'outil en fer ( bois --> pierre --> fer )
---
-minetest.register_craftitem("experience:rune_forgeron_n1", {
-	description = "Rune forgeron niveau 1.",
-	inventory_image = "rune_forgeron_n1.png",
-})
-
-
--- Rune du forgerons niveau 2
---
--- 
---
-minetest.register_craftitem("experience:rune_forgeron_n2", {
-	description = "Rune forgeron niveau 2.",
-	inventory_image = "rune_forgeron_n2.png",
-})
-
-
--- Rune du forgerons niveau 3
---
--- 
---
-minetest.register_craftitem("experience:rune_forgeron_n3", {
-	description = "Rune forgeron niveau 3.",
-	inventory_image = "rune_forgeron_n3.png",
-})
-
-
 
 
 

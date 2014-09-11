@@ -37,7 +37,7 @@ wolf_prototype = {
 	
 		generic = {
 					description="Wolf",
-					base_health=5,
+					base_health=20,
 					kill_result="animalmaterials:fur 1",
 					armor_groups= {
 						fleshy=90,
