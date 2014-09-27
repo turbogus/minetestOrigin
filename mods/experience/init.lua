@@ -35,38 +35,35 @@ level10_drop = "default:mese 99"
 ]]--
 
 level1 = 100
--- level1_drop = "default:steelblock 10"
-level1_drop ="experience:rune_forgeron_n1 1"
+level1_drop ="runes:eau"
 
-level2 = 200
--- level2_drop = "default:steelblock 99"
-level2_drop = nil
+level2 = 150
+level2_drop = "runes:air"
 
-level3 = 400
---level3_drop = "default:mese 10"
-level3_drop = nil
+level3 = 200
+level3_drop = "runes:terre"
 
-level4 = 800
---level4_drop = "default:mese 20"
-level4_drop = nil
+level4 = 400
+level4_drop = "runes:feu"
 
-level5 = 1600
-level5_drop = "nether:nether_apple 10"
+level5 = 500
+level5_drop = "runes:pierre"
 
-level6 = 3200
-level6_drop = "nether:nether_apple 20"
+level6 = 700
+level6_drop = "runes:metal"
 
 level7 = 6400
-level7_drop = "nether:nether_apple 30"
+level7_drop = "default:mese 50"
 
 level8 = 12800
-level8_drop = "nether:nether_glowstone 30"
+level8_drop = "nether:nether_apple 99"
 
 level9 = 25600
-level9_drop =  "nether:nether_pearl" 
+level9_drop = "nether:nether_pearl"
 
 level10 = 51200
-level10_drop ="nether:nether_book"
+level10_drop = "nether:nether_book"
+ 
 
 
 
@@ -131,12 +128,28 @@ minetest.register_on_newplayer(function(player)
 	file:write("0")
 	file:close()
 end)
+
 --set player's xp level to 0 if they die
+--Modification : le joueur perd la moitié de ces Xp en mourrant
 minetest.register_on_dieplayer(function(player)
-	file = io.open(minetest.get_worldpath().."/"..player:get_player_name().."_experience", "w")
-	file:write("0")
-	file:close()
+
+	xp = io.open(minetest.get_worldpath().."/"..player:get_player_name().."_experience", "r")
+				experience = xp:read("*l")
+				xp:close()
+				if experience ~= nil then
+					new_xp = math.ceil(experience / 2)
+					xp_write = io.open(minetest.get_worldpath().."/"..player:get_player_name().."_experience", "w")
+					xp_write:write(new_xp)
+					xp_write:close()
+					
+					--Mise à jour du HUD avec les nouveaux points d'XP
+					local nom = player:get_player_name()
+					if xpHUD[nom] then
+						player:hud_change(xpHUD[nom].id, "text","XP :"..new_xp.."")
+					end
+				end
 end)
+
 
 --Allow people to collect orbs
 minetest.register_globalstep(function(dtime)
