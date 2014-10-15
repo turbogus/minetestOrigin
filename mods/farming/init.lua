@@ -115,14 +115,14 @@ minetest.register_tool("farming:hoe_wood", {
 	end,
 })
 
-minetest.register_tool("farming:hoe_stone", {
+--[[minetest.register_tool("farming:hoe_stone", {
 	description = "Stone Hoe",
 	inventory_image = "farming_tool_stonehoe.png",
 	
 	on_use = function(itemstack, user, pointed_thing)
 		return farming.hoe_on_use(itemstack, user, pointed_thing, 90)
 	end,
-})
+})]]--
 
 minetest.register_tool("farming:hoe_steel", {
 	description = "Steel Hoe",
@@ -151,14 +151,14 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
+--[[minetest.register_craft({
 	output = "farming:hoe_stone",
 	recipe = {
 		{"group:stone", "group:stone"},
 		{"", "group:stick"},
 		{"", "group:stick"},
 	}
-})
+})]]--
 
 minetest.register_craft({
 	output = "farming:hoe_steel",

@@ -136,7 +136,7 @@ minetest.register_node("runes:socleOFF", {
 	-- Basculement du node en combinaison "eau" si une rune de l'eau 
 	-- est detectée dans l'emplacement rune1
 	--
-	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
+	--[[allow_metadata_inventory_put = function(pos, listname, index, stack, player)
 		
 		local meta = minetest.get_meta(pos)
 		local inv = meta:get_inventory()
@@ -157,7 +157,7 @@ minetest.register_node("runes:socleOFF", {
 		end
 				
 		return 0
-	end,
+	end,]]--
 	
 	
 	

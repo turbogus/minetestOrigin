@@ -33,7 +33,7 @@ minetest.register_tool("default:pick_wood", {
 		damage_groups = {fleshy=2},
 	},
 })
-minetest.register_tool("default:pick_stone", {
+--[[minetest.register_tool("default:pick_stone", {
 	description = "Stone Pickaxe",
 	inventory_image = "default_tool_stonepick.png",
 	tool_capabilities = {
@@ -44,7 +44,7 @@ minetest.register_tool("default:pick_stone", {
 		},
 		damage_groups = {fleshy=3},
 	},
-})
+})]]--
 minetest.register_tool("default:pick_steel", {
 	description = "Steel Pickaxe",
 	inventory_image = "default_tool_steelpick.png",
@@ -81,7 +81,7 @@ minetest.register_tool("default:pick_mese", {
 		damage_groups = {fleshy=5},
 	},
 })
-minetest.register_tool("default:pick_diamond", {
+--[[minetest.register_tool("default:pick_diamond", {
 	description = "Diamond Pickaxe",
 	inventory_image = "default_tool_diamondpick.png",
 	tool_capabilities = {
@@ -92,7 +92,7 @@ minetest.register_tool("default:pick_diamond", {
 		},
 		damage_groups = {fleshy=5},
 	},
-})
+})]]--
 
 --
 -- Shovels
@@ -111,7 +111,7 @@ minetest.register_tool("default:shovel_wood", {
 		damage_groups = {fleshy=2},
 	},
 })
-minetest.register_tool("default:shovel_stone", {
+--[[minetest.register_tool("default:shovel_stone", {
 	description = "Stone Shovel",
 	inventory_image = "default_tool_stoneshovel.png",
 	wield_image = "default_tool_stoneshovel.png^[transformR90",
@@ -123,7 +123,7 @@ minetest.register_tool("default:shovel_stone", {
 		},
 		damage_groups = {fleshy=2},
 	},
-})
+})]]--
 minetest.register_tool("default:shovel_steel", {
 	description = "Steel Shovel",
 	inventory_image = "default_tool_steelshovel.png",
@@ -163,7 +163,7 @@ minetest.register_tool("default:shovel_mese", {
 		damage_groups = {fleshy=4},
 	},
 })
-minetest.register_tool("default:shovel_diamond", {
+--[[minetest.register_tool("default:shovel_diamond", {
 	description = "Diamond Shovel",
 	inventory_image = "default_tool_diamondshovel.png",
 	wield_image = "default_tool_diamondshovel.png^[transformR90",
@@ -175,7 +175,7 @@ minetest.register_tool("default:shovel_diamond", {
 		},
 		damage_groups = {fleshy=4},
 	},
-})
+})]]--
 
 --
 -- Axes
@@ -193,7 +193,7 @@ minetest.register_tool("default:axe_wood", {
 		damage_groups = {fleshy=2},
 	},
 })
-minetest.register_tool("default:axe_stone", {
+--[[minetest.register_tool("default:axe_stone", {
 	description = "Stone Axe",
 	inventory_image = "default_tool_stoneaxe.png",
 	tool_capabilities = {
@@ -204,7 +204,7 @@ minetest.register_tool("default:axe_stone", {
 		},
 		damage_groups = {fleshy=3},
 	},
-})
+})]]--
 minetest.register_tool("default:axe_steel", {
 	description = "Steel Axe",
 	inventory_image = "default_tool_steelaxe.png",
@@ -241,7 +241,7 @@ minetest.register_tool("default:axe_mese", {
 		damage_groups = {fleshy=6},
 	},
 })
-minetest.register_tool("default:axe_diamond", {
+--[[minetest.register_tool("default:axe_diamond", {
 	description = "Diamond Axe",
 	inventory_image = "default_tool_diamondaxe.png",
 	tool_capabilities = {
@@ -252,7 +252,7 @@ minetest.register_tool("default:axe_diamond", {
 		},
 		damage_groups = {fleshy=7},
 	},
-})
+})]]--
 
 --
 -- Swords
@@ -270,7 +270,7 @@ minetest.register_tool("default:sword_wood", {
 		damage_groups = {fleshy=2},
 	}
 })
-minetest.register_tool("default:sword_stone", {
+--[[minetest.register_tool("default:sword_stone", {
 	description = "Stone Sword",
 	inventory_image = "default_tool_stonesword.png",
 	tool_capabilities = {
@@ -281,7 +281,7 @@ minetest.register_tool("default:sword_stone", {
 		},
 		damage_groups = {fleshy=4},
 	}
-})
+})]]--
 minetest.register_tool("default:sword_steel", {
 	description = "Steel Sword",
 	inventory_image = "default_tool_steelsword.png",
@@ -318,7 +318,7 @@ minetest.register_tool("default:sword_mese", {
 		damage_groups = {fleshy=7},
 	}
 })
-minetest.register_tool("default:sword_diamond", {
+--[[minetest.register_tool("default:sword_diamond", {
 	description = "Diamond Sword",
 	inventory_image = "default_tool_diamondsword.png",
 	tool_capabilities = {
@@ -329,4 +329,4 @@ minetest.register_tool("default:sword_diamond", {
 		},
 		damage_groups = {fleshy=8},
 	}
-})
+})]]--
