@@ -39,7 +39,7 @@ minetest.register_craftitem("runes:air", {
 --
 minetest.register_craftitem("runes:pierre", {
 	description = "Stone rune",
-	inventory_image = "stone.png",
+	inventory_image = "pierre.png",
 })
 
 -- Metal
