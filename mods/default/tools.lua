@@ -70,7 +70,7 @@ minetest.register_tool("default:pick_bronze", {
 	},
 })
 minetest.register_tool("default:pick_mese", {
-	description = "Mese Pickaxe",
+	description = "Gold Pickaxe",
 	inventory_image = "default_tool_mesepick.png",
 	tool_capabilities = {
 		full_punch_interval = 0.9,
@@ -151,7 +151,7 @@ minetest.register_tool("default:shovel_bronze", {
 	},
 })
 minetest.register_tool("default:shovel_mese", {
-	description = "Mese Shovel",
+	description = "Gold Shovel",
 	inventory_image = "default_tool_meseshovel.png",
 	wield_image = "default_tool_meseshovel.png^[transformR90",
 	tool_capabilities = {
@@ -230,7 +230,7 @@ minetest.register_tool("default:axe_bronze", {
 	},
 })
 minetest.register_tool("default:axe_mese", {
-	description = "Mese Axe",
+	description = "Gold Axe",
 	inventory_image = "default_tool_meseaxe.png",
 	tool_capabilities = {
 		full_punch_interval = 0.9,
@@ -307,7 +307,7 @@ minetest.register_tool("default:sword_bronze", {
 	}
 })
 minetest.register_tool("default:sword_mese", {
-	description = "Mese Sword",
+	description = "Gold Sword",
 	inventory_image = "default_tool_mesesword.png",
 	tool_capabilities = {
 		full_punch_interval = 0.7,
