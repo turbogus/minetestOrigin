@@ -206,7 +206,7 @@ minetest.register_craftitem("animalmaterials:fish_clownfish", { --9
 -- Déclaration de l'item (nb : donne 4 points d'Xp) 
 --
 minetest.register_craftitem("animalmaterials:cooked_meat", {
-	description = "Monster cooked meet",
+	description = "Monster cooked meat",
 	image = "animalmaterials_meat_cooked.png",
 	on_use = minetest.item_eat(4),
 	groups = { meat=1, eatable=1 },

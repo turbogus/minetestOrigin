@@ -55,14 +55,14 @@ minetest.register_craft({
 	}
 })
 
---[[minetest.register_craft({
+minetest.register_craft({
 	output = 'default:pick_stone',
 	recipe = {
 		{'group:stone', 'group:stone', 'group:stone'},
 		{'', 'group:stick', ''},
 		{'', 'group:stick', ''},
 	}
-})]]--
+})
 
 minetest.register_craft({
 	output = 'default:pick_steel',
@@ -91,14 +91,14 @@ minetest.register_craft({
 	}
 })
 
---[[minetest.register_craft({
+minetest.register_craft({
 	output = 'default:pick_diamond',
 	recipe = {
 		{'default:diamond', 'default:diamond', 'default:diamond'},
 		{'', 'group:stick', ''},
 		{'', 'group:stick', ''},
 	}
-})]]--
+})
 
 minetest.register_craft({
 	output = 'default:shovel_wood',
@@ -109,14 +109,14 @@ minetest.register_craft({
 	}
 })
 
---[[minetest.register_craft({
+minetest.register_craft({
 	output = 'default:shovel_stone',
 	recipe = {
 		{'group:stone'},
 		{'group:stick'},
 		{'group:stick'},
 	}
-})]]--
+})
 
 minetest.register_craft({
 	output = 'default:shovel_steel',
@@ -145,14 +145,14 @@ minetest.register_craft({
 	}
 })
 
---[[minetest.register_craft({
+minetest.register_craft({
 	output = 'default:shovel_diamond',
 	recipe = {
 		{'default:diamond'},
 		{'group:stick'},
 		{'group:stick'},
 	}
-})]]--
+})
 
 minetest.register_craft({
 	output = 'default:axe_wood',
@@ -163,14 +163,14 @@ minetest.register_craft({
 	}
 })
 
---[[minetest.register_craft({
+minetest.register_craft({
 	output = 'default:axe_stone',
 	recipe = {
 		{'group:stone', 'group:stone'},
 		{'group:stone', 'group:stick'},
 		{'', 'group:stick'},
 	}
-})]]--
+})
 
 minetest.register_craft({
 	output = 'default:axe_steel',
@@ -199,14 +199,14 @@ minetest.register_craft({
 	}
 })
 
---[[minetest.register_craft({
+minetest.register_craft({
 	output = 'default:axe_diamond',
 	recipe = {
 		{'default:diamond', 'default:diamond'},
 		{'default:diamond', 'group:stick'},
 		{'', 'group:stick'},
 	}
-})]]--
+})
 
 minetest.register_craft({
 	output = 'default:sword_wood',
@@ -217,14 +217,14 @@ minetest.register_craft({
 	}
 })
 
---[[minetest.register_craft({
+minetest.register_craft({
 	output = 'default:sword_stone',
 	recipe = {
 		{'group:stone'},
 		{'group:stone'},
 		{'group:stick'},
 	}
-})]]--
+})
 
 minetest.register_craft({
 	output = 'default:sword_steel',
@@ -253,14 +253,14 @@ minetest.register_craft({
 	}
 })
 
---[[minetest.register_craft({
+minetest.register_craft({
 	output = 'default:sword_diamond',
 	recipe = {
 		{'default:diamond'},
 		{'default:diamond'},
 		{'group:stick'},
 	}
-})]]--
+})
 
 minetest.register_craft({
 	output = 'default:rail 15',
