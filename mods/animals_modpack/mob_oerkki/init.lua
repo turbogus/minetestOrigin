@@ -52,12 +52,14 @@ oerkki_prototype = {
 		
 		generic = {
 					description="Oerkki",
-					base_health=3,
+					base_health=30,
 					-- kill_result="animalmaterials:meat_toxic 1",
 					kill_result = oerkki_drop,
 					armor_groups= {
-						fleshy=15,
-						deamon=30,
+						--fleshy=15,
+						--deamon=30,
+						fleshy=30,
+						deamon=40,
 					},
 					groups = oerkki_groups,
 					envid="on_ground_1",

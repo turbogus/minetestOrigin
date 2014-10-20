@@ -55,11 +55,14 @@ big_red_prototype = {
 		
 		generic = {
 					description="Big Red",
-					base_health=8,
+					--base_health=8,
+					base_health=30,
 					kill_result = bigred_drop,
 					armor_groups= {
-						fleshy=10,
-						deamon=20,
+						--fleshy=10,
+						--deamon=20,
+						fleshy=30,
+						deamon=40,
 					},
 					groups = big_red_groups,
 					envid="on_ground_1",
