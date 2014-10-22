@@ -106,7 +106,7 @@ minetest.register_node("beds:bed_bottom", {
 			--old_yaw = clicker:get_look_yaw()
 			--guy = clicker
 			--clicker:set_look_yaw(get_dir(pos))
-			minetest.chat_send_all("Good night")
+			--minetest.chat_send_all("Good night")
 			--lock(0,2,0.1,clicker, get_dir(pos))
 			
 			
@@ -121,7 +121,19 @@ minetest.register_node("beds:bed_bottom", {
 					file:write(minetest.serialize(beds_player_spawns))                     
 					file:close()                                                           
 				end
-				minetest.chat_send_all("Bed set.")
+				
+				-- Test d'enregistrement de la position dans un fichier unique
+				--
+				local fichier = io.open(minetest.get_worldpath().."/turbogus_bed","w")
+				if fichier then
+					local position = {}
+					position = clicker:getpos()
+					fichier:write(minetest.serialize(position))
+					fichier:close()
+				end
+				
+				lejoueur = clicker:get_player_name()
+				minetest.chat_send_player(lejoueur, "Personal spawn set")
 			--
 			-- Fin d'ajout par bibi !
 			
@@ -237,10 +249,20 @@ end)
 
 minetest.register_on_respawnplayer(function(player)
 	local name = player:get_player_name()
-	if beds_player_spawns[name] then
-		player:setpos(beds_player_spawns[name])
+	local fichier = io.open(minetest.get_worldpath().."/turbogus_bed","r")
+	if fichier then
+		local position = {}
+		position = minetest.deserialize(fichier:read("*all")) 
+		player:setpos(position)
+		fichier:close()
 		return true
+	else
+		return false
 	end
+		--if beds_player_spawns[name] then
+		--	player:setpos(beds_player_spawns[name])
+		--	return true
+		--end
 end)
 
 minetest.register_abm({
