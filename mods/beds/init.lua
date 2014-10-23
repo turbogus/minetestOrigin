@@ -108,7 +108,22 @@ minetest.register_node("beds:bed_bottom", {
 			--clicker:set_look_yaw(get_dir(pos))
 			--minetest.chat_send_all("Good night")
 			--lock(0,2,0.1,clicker, get_dir(pos))
+				
+			-- Test d'enregistrement de la position dans un fichier unique
+			--
+			leJoueur = clicker:get_player_name()
+			local fichier = io.open(minetest.get_worldpath().."/"..leJoueur.."_bed","w")
 			
+			if fichier then
+				local position = {}
+				position = clicker:getpos()
+				fichier:write(minetest.serialize(position))
+				fichier:close()
+			end
+				
+				lejoueur = clicker:get_player_name()
+				minetest.chat_send_player(lejoueur, "Personal spawn set")
+			-- FIN DE TEST
 			
 			-- Ajout par bibi !
 			--
@@ -121,19 +136,6 @@ minetest.register_node("beds:bed_bottom", {
 					file:write(minetest.serialize(beds_player_spawns))                     
 					file:close()                                                           
 				end
-				
-				-- Test d'enregistrement de la position dans un fichier unique
-				--
-				local fichier = io.open(minetest.get_worldpath().."/turbogus_bed","w")
-				if fichier then
-					local position = {}
-					position = clicker:getpos()
-					fichier:write(minetest.serialize(position))
-					fichier:close()
-				end
-				
-				lejoueur = clicker:get_player_name()
-				minetest.chat_send_player(lejoueur, "Personal spawn set")
 			--
 			-- Fin d'ajout par bibi !
 			
@@ -247,9 +249,11 @@ end)
 
 ]]--
 
+-- Réapparition du joueur dans le dernier lit installé
+--
 minetest.register_on_respawnplayer(function(player)
 	local name = player:get_player_name()
-	local fichier = io.open(minetest.get_worldpath().."/turbogus_bed","r")
+	local fichier = io.open(minetest.get_worldpath().."/"..name.."_bed","r")
 	if fichier then
 		local position = {}
 		position = minetest.deserialize(fichier:read("*all")) 
