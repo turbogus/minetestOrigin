@@ -1,11 +1,9 @@
 minetest.register_globalstep(function(dtime)
-   for _,player in ipairs(minetest.get_connected_players()) do
-      if player:get_hp() > 0 or not minetest.setting_getbool("enable_damage") then
-         local pos = player:getpos()
-         pos.y = pos.y+0.5
-         local inv = player:get_inventory()
-         local ctrl = player:get_player_control()
-         if ctrl.up or ctrl.left or ctrl.right then
+	for _,player in ipairs(minetest.get_connected_players()) do
+		if player:get_hp() > 0 or not minetest.setting_getbool("enable_damage") then
+			local pos = player:getpos()
+			pos.y = pos.y+0.5
+			local inv = player:get_inventory()
 			
 			for _,object in ipairs(minetest.env:get_objects_inside_radius(pos, 1)) do
 				if not object:is_player() and object:get_luaentity() and object:get_luaentity().name == "__builtin:item" then
@@ -22,7 +20,7 @@ minetest.register_globalstep(function(dtime)
 					end
 				end
 			end
-		end
+			
 			for _,object in ipairs(minetest.env:get_objects_inside_radius(pos, 2)) do
 				if not object:is_player() and object:get_luaentity() and object:get_luaentity().name == "__builtin:item" then
 					if object:get_luaentity().collect then
