@@ -97,7 +97,15 @@ minetest.register_craftitem("animalmaterials:net", {
 minetest.register_craftitem("animalmaterials:saddle", {
 	description = "Saddle",
 	image = "animalmaterials_saddle.png",
-	stack_max=1
+	stack_max=99
+})
+minetest.register_craft({
+	output = "animalmaterials:saddle",
+	recipe = {
+		{"animalmaterials:fur","animalmaterials:fur","animalmaterials:fur"},
+		{"","group:wool",""},
+		{"", "default:steel_ingot",""},
+	}
 })
 
 -------------------------------------------------------------------------------

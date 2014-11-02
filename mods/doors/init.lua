@@ -17,8 +17,8 @@ doors = {}
 --                          open it
 
 local function is_right(pos) 
-	local r1 = minetest.get_node({x=pos.x-1, y=pos.y, z=pos.z})
-	local r2 = minetest.get_node({x=pos.x, y=pos.y, z=pos.z-1})
+	local r1 = minetest.env:get_node({x=pos.x-1, y=pos.y, z=pos.z})
+	local r2 = minetest.env:get_node({x=pos.x, y=pos.y, z=pos.z-1})
 	if string.find(r1.name, "door_") or string.find(r2.name, "door_") then
 		if string.find(r1.name, "_1") or string.find(r2.name, "_1") then
 			return true
@@ -28,11 +28,11 @@ local function is_right(pos)
 	end
 end
 
-function doors.register_door(name, def)
+function doors:register_door(name, def)
 	def.groups.not_in_creative_inventory = 1
-
+	
 	local box = {{-0.5, -0.5, -0.5, 0.5, 0.5, -0.5+1.5/16}}
-
+	
 	if not def.node_box_bottom then
 		def.node_box_bottom = box
 	end
@@ -45,40 +45,34 @@ function doors.register_door(name, def)
 	if not def.selection_box_top then
 		def.selection_box_top = box
 	end
-
+	
 	minetest.register_craftitem(name, {
 		description = def.description,
 		inventory_image = def.inventory_image,
-
+		
 		on_place = function(itemstack, placer, pointed_thing)
 			if not pointed_thing.type == "node" then
 				return itemstack
 			end
-
+			
 			local ptu = pointed_thing.under
-			local nu = minetest.get_node(ptu)
+			local nu = minetest.env:get_node(ptu)
 			if minetest.registered_nodes[nu.name].on_rightclick then
 				return minetest.registered_nodes[nu.name].on_rightclick(ptu, nu, placer, itemstack)
 			end
-
+			
 			local pt = pointed_thing.above
 			local pt2 = {x=pt.x, y=pt.y, z=pt.z}
 			pt2.y = pt2.y+1
 			if
-				not minetest.registered_nodes[minetest.get_node(pt).name].buildable_to or
-				not minetest.registered_nodes[minetest.get_node(pt2).name].buildable_to or
+				not minetest.registered_nodes[minetest.env:get_node(pt).name].buildable_to or
+				not minetest.registered_nodes[minetest.env:get_node(pt2).name].buildable_to or
 				not placer or
 				not placer:is_player()
 			then
 				return itemstack
 			end
-
-			if minetest.is_protected(pt, placer:get_player_name()) or
-					minetest.is_protected(pt2, placer:get_player_name()) then
-				minetest.record_protection_violation(pt, placer:get_player_name())
-				return itemstack
-			end
-
+			
 			local p2 = minetest.dir_to_facedir(placer:get_look_dir())
 			local pt3 = {x=pt.x, y=pt.y, z=pt.z}
 			if p2 == 0 then
@@ -90,53 +84,57 @@ function doors.register_door(name, def)
 			elseif p2 == 3 then
 				pt3.z = pt3.z-1
 			end
-			if not string.find(minetest.get_node(pt3).name, name.."_b_") then
-				minetest.set_node(pt, {name=name.."_b_1", param2=p2})
-				minetest.set_node(pt2, {name=name.."_t_1", param2=p2})
+			if not string.find(minetest.env:get_node(pt3).name, name.."_b_") then
+				minetest.env:set_node(pt, {name=name.."_b_1", param2=p2})
+				minetest.env:set_node(pt2, {name=name.."_t_1", param2=p2})
 			else
-				minetest.set_node(pt, {name=name.."_b_2", param2=p2})
-				minetest.set_node(pt2, {name=name.."_t_2", param2=p2})
+				minetest.env:set_node(pt, {name=name.."_b_2", param2=p2})
+				minetest.env:set_node(pt2, {name=name.."_t_2", param2=p2})
 			end
-
+			
 			if def.only_placer_can_open then
 				local pn = placer:get_player_name()
-				local meta = minetest.get_meta(pt)
+				local meta = minetest.env:get_meta(pt)
 				meta:set_string("doors_owner", pn)
 				meta:set_string("infotext", "Owned by "..pn)
-				meta = minetest.get_meta(pt2)
+				meta = minetest.env:get_meta(pt2)
 				meta:set_string("doors_owner", pn)
 				meta:set_string("infotext", "Owned by "..pn)
 			end
-
+			
 			if not minetest.setting_getbool("creative_mode") then
 				itemstack:take_item()
 			end
 			return itemstack
 		end,
 	})
-
+	
 	local tt = def.tiles_top
 	local tb = def.tiles_bottom
 	
 	local function after_dig_node(pos, name, digger)
-		local node = minetest.get_node(pos)
+		local node = minetest.env:get_node(pos)
 		if node.name == name then
 			minetest.node_dig(pos, node, digger)
 		end
 	end
-
+	
 	local function on_rightclick(pos, dir, check_name, replace, replace_dir, params)
 		pos.y = pos.y+dir
-		if not minetest.get_node(pos).name == check_name then
+		if not minetest.env:get_node(pos).name == check_name then
 			return
 		end
-		local p2 = minetest.get_node(pos).param2
+		local p2 = minetest.env:get_node(pos).param2
 		p2 = params[p2+1]
 		
-		minetest.swap_node(pos, {name=replace_dir, param2=p2})
+		local meta = minetest.env:get_meta(pos):to_table()
+		minetest.env:set_node(pos, {name=replace_dir, param2=p2})
+		minetest.env:get_meta(pos):from_table(meta)
 		
 		pos.y = pos.y-dir
-		minetest.swap_node(pos, {name=replace, param2=p2})
+		meta = minetest.env:get_meta(pos):to_table()
+		minetest.env:set_node(pos, {name=replace, param2=p2})
+		minetest.env:get_meta(pos):from_table(meta)
 
 		local snd_1 = "_close"
 		local snd_2 = "_open"
@@ -146,21 +144,21 @@ function doors.register_door(name, def)
 		end
 
 		if is_right(pos) then
-			minetest.sound_play("door"..snd_1, {pos = pos, gain = 0.3, max_hear_distance = 10})
+			minetest.sound_play("door"..snd_1, {pos = pos, gain = 0.3, max_hear_distance = 10})					
 		else
 			minetest.sound_play("door"..snd_2, {pos = pos, gain = 0.3, max_hear_distance = 10})
 		end
 	end
-
+	
 	local function check_player_priv(pos, player)
 		if not def.only_placer_can_open then
 			return true
 		end
-		local meta = minetest.get_meta(pos)
+		local meta = minetest.env:get_meta(pos)
 		local pn = player:get_player_name()
 		return meta:get_string("doors_owner") == pn
 	end
-
+	
 	minetest.register_node(name.."_b_1", {
 		tiles = {tb[2], tb[2], tb[2], tb[2], tb[1], tb[1].."^[transformfx"},
 		paramtype = "light",
@@ -192,7 +190,7 @@ function doors.register_door(name, def)
 		sounds = def.sounds,
         	sunlight_propagates = def.sunlight
 	})
-
+	
 	minetest.register_node(name.."_t_1", {
 		tiles = {tt[2], tt[2], tt[2], tt[2], tt[1], tt[1].."^[transformfx"},
 		paramtype = "light",
@@ -224,7 +222,7 @@ function doors.register_door(name, def)
 		sounds = def.sounds,
         	sunlight_propagates = def.sunlight,
 	})
-
+	
 	minetest.register_node(name.."_b_2", {
 		tiles = {tb[2], tb[2], tb[2], tb[2], tb[1].."^[transformfx", tb[1]},
 		paramtype = "light",
@@ -256,7 +254,7 @@ function doors.register_door(name, def)
 		sounds = def.sounds,
         	sunlight_propagates = def.sunlight
 	})
-
+	
 	minetest.register_node(name.."_t_2", {
 		tiles = {tt[2], tt[2], tt[2], tt[2], tt[1].."^[transformfx", tt[1]},
 		paramtype = "light",
@@ -288,10 +286,10 @@ function doors.register_door(name, def)
 		sounds = def.sounds,
         	sunlight_propagates = def.sunlight
 	})
-
+	
 end
 
-doors.register_door("doors:door_wood", {
+doors:register_door("doors:door_wood", {
 	description = "Wooden Door",
 	inventory_image = "door_wood.png",
 	groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=2,door=1},
@@ -310,7 +308,7 @@ minetest.register_craft({
 	}
 })
 
-doors.register_door("doors:door_steel", {
+doors:register_door("doors:door_steel", {
 	description = "Steel Door",
 	inventory_image = "door_steel.png",
 	groups = {snappy=1,bendy=2,cracky=1,melty=2,level=2,door=1},
@@ -330,7 +328,7 @@ minetest.register_craft({
 	}
 })
 
-doors.register_door("doors:door_glass", {
+doors:register_door("doors:door_glass", {
 	description = "Glass Door",
 	inventory_image = "door_glass.png",
 	groups = {snappy=1,cracky=1,oddly_breakable_by_hand=3,door=1},
@@ -349,7 +347,7 @@ minetest.register_craft({
 	}
 })
 
-doors.register_door("doors:door_obsidian_glass", {
+doors:register_door("doors:door_obsidian_glass", {
 	description = "Obsidian Glass Door",
 	inventory_image = "door_obsidian_glass.png",
 	groups = {snappy=1,cracky=1,oddly_breakable_by_hand=3,door=1},
@@ -367,18 +365,26 @@ minetest.register_craft({
 		{"default:obsidian_glass", "default:obsidian_glass"}
 	}
 })
+minetest.register_alias("doors:door_wood_a_c", "doors:door_wood_t_1")
+minetest.register_alias("doors:door_wood_a_o", "doors:door_wood_t_1")
+minetest.register_alias("doors:door_wood_b_c", "doors:door_wood_b_1")
+minetest.register_alias("doors:door_wood_b_o", "doors:door_wood_b_1")
 
 
 ----trapdoor----
 
+local me
+local meta
+local state = 0
+
 local function update_door(pos, node) 
-	minetest.set_node(pos, node)
+	minetest.env:set_node(pos, node)
 end
 
 local function punch(pos)
-	local meta = minetest.get_meta(pos)
-	local state = meta:get_int("state")
-	local me = minetest.get_node(pos)
+	meta = minetest.env:get_meta(pos)
+	state = meta:get_int("state")
+	me = minetest.env:get_node(pos)
 	local tmp_node
 	local tmp_node2
 	oben = {x=pos.x, y=pos.y+1, z=pos.z}
@@ -394,6 +400,7 @@ local function punch(pos)
 		update_door(pos, tmp_node)
 		meta:set_int("state", state)
 end
+
 
 minetest.register_node("doors:trapdoor", {
 	description = "Trapdoor",
@@ -421,6 +428,7 @@ minetest.register_node("doors:trapdoor", {
 	end,
 })
 
+
 minetest.register_node("doors:trapdoor_open", {
 	drawtype = "nodebox",
 	tiles = {"door_trapdoor_side.png", "door_trapdoor_side.png",  "door_trapdoor_side.png",  "door_trapdoor_side.png", "door_trapdoor.png", "door_trapdoor.png"},
@@ -443,6 +451,9 @@ minetest.register_node("doors:trapdoor_open", {
 		punch(pos)
 	end,
 })
+
+
+
 
 minetest.register_craft({
 	output = 'doors:trapdoor 2',

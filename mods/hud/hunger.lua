@@ -50,9 +50,25 @@ if minetest.get_modpath("farming") ~= nil then
 end
 
 if minetest.get_modpath("mobs") ~= nil then
-	overwrite("mobs:meat", 6)
-	overwrite("mobs:meat_raw", 3)
-	overwrite("mobs:rat_cooked", 5)
+	--overwrite("mobs:meat", 6)
+	--overwrite("mobs:meat_raw", 3)
+	--overwrite("mobs:rat_cooked", 5)
+	
+	-- Ajout pour le support de mobs++
+	--
+	
+	-- Poulet
+	overwrite("mobs:chicken_raw", 1)
+	overwrite("mobs:chicken_cooked", 8)
+	
+	-- Cochon
+	overwrite("mobs:pork_raw", 1)
+	overwrite("mobs:pork_cooked", 8)
+	
+	-- Autre viande (vache && mouton)
+	overwrite("mobs:meat_raw", 1)
+	overwrite("mobs:meat", 8)
+	
 end
 
 if minetest.get_modpath("moretrees") ~= nil then
