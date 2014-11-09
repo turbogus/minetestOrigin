@@ -3,7 +3,7 @@
 mobs:register_mob("mobs:dirt_monster", {
 	type = "monster",
 	hp_min = 50,
-	hp_max = 60,
+	hp_max = 65,
 	collisionbox = {-0.4, -0.01, -0.4, 0.4, 1.9, 0.4},
 	visual = "mesh",
 	mesh = "mobs_stone_monster.x",
