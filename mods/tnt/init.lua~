@@ -124,14 +124,14 @@ minetest.register_node("tnt:tnt", {
 		end
 	end,
 	
-	--[[on_rightclick = function(pos, node, clicker)
+	on_rightclick = function(pos, node, clicker)
 		--if clicker:get_wielded_tool():get_name() == "flint:lighter"  then
 		--	minetest.sound_play("tnt_ignite", {pos=pos})
 		--	minetest.env:set_node(pos, {name="tnt:tnt_burning"})
 		--	boom(pos, 4)
 		--end
 		bidule = clicker:get_name()	
-	end,]]--
+	end,
 	
 	mesecons = {
 		effector = {
