@@ -35,28 +35,28 @@ level10_drop = "default:mese 99"
 ]]--
 
 level1 = 100
-level1_drop ="runes:eau"
+level1_drop ="default:copperblock 3"
 
-level2 = 150
-level2_drop = "runes:air"
+level2 = 200
+level2_drop = "default:steelblock 4"
 
-level3 = 200
-level3_drop = "runes:terre"
+level3 = 400
+level3_drop = "default:goldblock 4"
 
-level4 = 400
-level4_drop = "runes:feu"
+level4 = 800
+level4_drop = "default:diamondblock 6"
 
-level5 = 500
-level5_drop = "runes:pierre"
+level5 = 1500
+level5_drop = "default:mese 10"
 
-level6 = 700
-level6_drop = "runes:metal"
+level6 = 3000
+level6_drop = "default:diamondblock 20"
 
-level7 = 6400
-level7_drop = "default:mese 50"
+level7 = 6500
+level7_drop = "runes:septre"
 
 level8 = 12800
-level8_drop = "nether:nether_apple 99"
+level8_drop = "runes:death_hammer"
 
 level9 = 25600
 level9_drop = "nether:nether_pearl"

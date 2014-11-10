@@ -35,38 +35,35 @@ level10_drop = "default:mese 99"
 ]]--
 
 level1 = 100
--- level1_drop = "default:steelblock 10"
-level1_drop = nil
+level1_drop ="default:copperblock 5"
 
 level2 = 200
--- level2_drop = "default:steelblock 99"
-level2_drop = nil
+level2_drop = "default:steelblock 5"
 
 level3 = 400
---level3_drop = "default:mese 10"
-level3_drop = nil
+level3_drop = "default:goldblock 5"
 
 level4 = 800
---level4_drop = "default:mese 20"
-level4_drop = nil
+level4_drop = "default:diamondblock 6"
 
-level5 = 1600
-level5_drop = "nether:nether_apple 10"
+level5 = 1500
+level5_drop = "default:mese 10"
 
-level6 = 3200
-level6_drop = "nether:nether_apple 20"
+level6 = 3000
+level6_drop = "default:diamondblock 20"
 
-level7 = 6400
-level7_drop = "nether:nether_apple 30"
+level7 = 6500
+level7_drop = "default:mese 50"
 
 level8 = 12800
-level8_drop = "nether:nether_glowstone 30"
+level8_drop = "nether:nether_apple 99"
 
 level9 = 25600
-level9_drop =  "nether:nether_pearl" 
+level9_drop = "nether:nether_pearl"
 
 level10 = 51200
-level10_drop ="nether:nether_book"
+level10_drop = "nether:nether_book"
+ 
 
 
 
@@ -131,12 +128,28 @@ minetest.register_on_newplayer(function(player)
 	file:write("0")
 	file:close()
 end)
+
 --set player's xp level to 0 if they die
+--Modification : le joueur perd la moitié de ces Xp en mourrant
 minetest.register_on_dieplayer(function(player)
-	file = io.open(minetest.get_worldpath().."/"..player:get_player_name().."_experience", "w")
-	file:write("0")
-	file:close()
+
+	xp = io.open(minetest.get_worldpath().."/"..player:get_player_name().."_experience", "r")
+				experience = xp:read("*l")
+				xp:close()
+				if experience ~= nil then
+					new_xp = math.ceil(experience / 2)
+					xp_write = io.open(minetest.get_worldpath().."/"..player:get_player_name().."_experience", "w")
+					xp_write:write(new_xp)
+					xp_write:close()
+					
+					--Mise à jour du HUD avec les nouveaux points d'XP
+					local nom = player:get_player_name()
+					if xpHUD[nom] then
+						player:hud_change(xpHUD[nom].id, "text","XP :"..new_xp.."")
+					end
+				end
 end)
+
 
 --Allow people to collect orbs
 minetest.register_globalstep(function(dtime)
@@ -469,23 +482,116 @@ minetest.register_on_punchnode(function(p, node, player)
 
 end)
 
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
 
+-- Boite pour faire des enchantements !
+--
+--
 
+-- Craft
 --
--- Boite à enchantement !
---
-minetest.register_node("experience:enchantment_box", {
-	description = "Enchantment box.",
-	tiles = {"enchantment_box.png"},
-	groups = {cracky=3, stone=1},
-	drop = 'default:desert_stone',
-	legacy_mineral = true,
-	sounds = default.node_sound_stone_defaults(),
+minetest.register_craft({
+	output = 'experience:magic_box',
+	recipe = {
+		{'default:obsidian', 'default:obsidian', 'default:obsidian'},
+		{'default:steel_ingot', 'default:bookshelf', 'default:steel_ingot'},
+		{'default:steel_ingot', 'default:steel_ingot', 'default:steel_ingot'},
+	}
 })
 
 
+-- Déclaration du menu quand on 
+-- clique sur le coffre
+--
+magic_box_formspec = 
+	"size[8,9]"..
+	--"image[2,2;1,1;default_furnace_fire_bg.png]"..
+	"list[current_name;item;2,3;1,1;]"..
+	"list[current_name;rune;2,1;1,1;]"..
+	"list[current_name;transformation;5,1;2,2;]"..
+	"list[current_player;main;0,5;8,4;]"
 
 
+-- Déclaration du node
+--
+minetest.register_node("experience:magic_box", {
+	description = "Coffre a Runes",
+	tiles = {"default_obsidian.png", "default_steel_block.png", "default_steel_block.png",
+		"default_steel_block.png", "default_steel_block.png", "default_bookshelf.png"},
+	paramtype2 = "facedir",
+	groups = {crumbly=3, falling_node=1, sand=1},
+	legacy_facedir_simple = true,
+	is_ground_content = false,
+	
+	-- Mise en forme de l'inventaire
+	--
+	on_construct = function(pos)
+		local meta = minetest.get_meta(pos)
+		meta:set_string("formspec", magic_box_formspec)
+		meta:set_string("infotext", "Enchantement")
+		local inv = meta:get_inventory()
+		inv:set_size("item", 1)
+		inv:set_size("rune", 1)
+		inv:set_size("transformation", 1)
+	end,
+	
+	--Peut-être pris seulement si l'inventaire est vide !
+	--
+	can_dig = function(pos,player)
+		local meta = minetest.get_meta(pos);
+		local inv = meta:get_inventory()
+		if not inv:is_empty("item") then
+			return false
+		elseif not inv:is_empty("transformation") then
+			return false
+		elseif not inv:is_empty("rune") then
+			return false
+		end
+		return true
+	end,
+	
+	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
+		local meta = minetest.get_meta(pos)
+		local inv = meta:get_inventory()
+		if listname == "rune" then
+			if minetest.get_craft_result({method="fuel",width=1,items={stack}}).time ~= 0 then
+				if inv:is_empty("item") then
+					meta:set_string("infotext","Aucune runes presentes!")
+				end
+				return stack:get_count()
+			else
+				return 0
+			end
+		elseif listname == "item" then
+			return stack:get_count()
+		elseif listname == "transformation" then
+			return 0
+		end
+	end,
+	
+	--[[allow_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
+		local meta = minetest.get_meta(pos)
+		local inv = meta:get_inventory()
+		local stack = inv:get_stack(from_list, from_index)
+		if to_list == "fuel" then
+			if minetest.get_craft_result({method="fuel",width=1,items={stack}}).time ~= 0 then
+				if inv:is_empty("src") then
+					meta:set_string("infotext","Furnace is empty")
+				end
+				return count
+			else
+				return 0
+			end
+		elseif to_list == "src" then
+			return count
+		elseif to_list == "dst" then
+			return 0
+		end
+	end,]]--
+})
 
 
 
