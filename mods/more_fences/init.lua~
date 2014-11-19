@@ -42,6 +42,8 @@ minetest.register_node("more_fences:fence_iron", {
 	light_propagates = true,
 	paramtype = "light",
 	is_ground_content = true,
+	diggable = true,
+	groups = {choppy=2,oddly_breakable_by_hand=2,flammable=2},
 	selection_box = {
 		type = "fixed",
 		fixed = {-1/7, -1/2, -1/7, 1/7, 1/2, 1/7},
@@ -56,6 +58,8 @@ minetest.register_node("more_fences:fence_cobble", {
 	light_propagates = true,
 	paramtype = "light",
 	is_ground_content = true,
+	diggable = true,
+	groups = {choppy=2,oddly_breakable_by_hand=2,flammable=2},
 	selection_box = {
 		type = "fixed",
 		fixed = {-1/7, -1/2, -1/7, 1/7, 1/2, 1/7},
@@ -69,6 +73,8 @@ minetest.register_node("more_fences:fence_stone", {
 	light_propagates = true,
 	paramtype = "light",
 	is_ground_content = true,
+	diggable = true,
+	groups = {choppy=2,oddly_breakable_by_hand=2,flammable=2},
 	selection_box = {
 		type = "fixed",
 		fixed = {-1/7, -1/2, -1/7, 1/7, 1/2, 1/7},
@@ -82,6 +88,8 @@ minetest.register_node("more_fences:fence_brick", {
 	light_propagates = true,
 	paramtype = "light",
 	is_ground_content = true,
+	diggable = true,
+	groups = {choppy=2,oddly_breakable_by_hand=2,flammable=2},
 	selection_box = {
 		type = "fixed",
 		fixed = {-1/7, -1/2, -1/7, 1/7, 1/2, 1/7},
@@ -95,6 +103,8 @@ minetest.register_node("more_fences:fence_mese", {
 	light_propagates = true,
 	paramtype = "light",
 	is_ground_content = true,
+	diggable = true,
+	groups = {choppy=2,oddly_breakable_by_hand=2,flammable=2},
 	selection_box = {
 		type = "fixed",
 		fixed = {-1/7, -1/2, -1/7, 1/7, 1/2, 1/7},
@@ -108,6 +118,8 @@ minetest.register_node("more_fences:fence_cactus", {
 	light_propagates = true,
 	paramtype = "light",
 	is_ground_content = true,
+	diggable = true,
+	groups = {choppy=2,oddly_breakable_by_hand=2,flammable=2},
 	selection_box = {
 		type = "fixed",
 		fixed = {-1/7, -1/2, -1/7, 1/7, 1/2, 1/7},
@@ -121,6 +133,8 @@ minetest.register_node("more_fences:fence_sandstone", {
 	light_propagates = true,
 	paramtype = "light",
 	is_ground_content = true,
+	diggable = true,
+	groups = {choppy=2,oddly_breakable_by_hand=2,flammable=2},
 	selection_box = {
 		type = "fixed",
 		fixed = {-1/7, -1/2, -1/7, 1/7, 1/2, 1/7},

@@ -21,12 +21,12 @@ mobs:register_mob("mobs:sand_monster", {
 		min = 1,
 		max = 3,},
 	},
-	light_resistant = true,
+	light_resistant = false,
 	armor = 100,
 	drawtype = "front",
 	water_damage = 3,
 	lava_damage = 1,
-	light_damage = 0,
+	light_damage = 4,
 	attack_type = "dogfight",
 	animation = {
 		speed_normal = 15,
@@ -44,4 +44,5 @@ mobs:register_mob("mobs:sand_monster", {
 	step = 0.5,
 	blood_texture = "mobs_blood.png",
 })
-mobs:register_spawn("mobs:sand_monster", {"default:desert_sand", "default:sand"}, 20, -1, 7000, 1, 31000)
+--mobs:register_spawn("mobs:sand_monster", {"default:desert_sand", "default:sand"}, 20, -1, 7000, 1, 31000)
+mobs:register_spawn("mobs:sand_monster", {"default:desert_sand", "default:sand"}, 20, -1, 700, 1, 31000)

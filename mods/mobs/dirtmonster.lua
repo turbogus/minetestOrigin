@@ -2,8 +2,8 @@
 
 mobs:register_mob("mobs:dirt_monster", {
 	type = "monster",
-	hp_min = 65,
-	hp_max = 85,
+	hp_min = 100,
+	hp_max = 150,
 	collisionbox = {-0.4, -0.01, -0.4, 0.4, 1.9, 0.4},
 	visual = "mesh",
 	mesh = "mobs_stone_monster.x",
@@ -13,7 +13,7 @@ mobs:register_mob("mobs:dirt_monster", {
 	view_range = 15,
 	walk_velocity = 3,
 	run_velocity = 6,
-	damage = 5,
+	damage = 2,
 	drops = {
 		{name = "experience:orb_one",
 		chance = 1,
@@ -22,9 +22,9 @@ mobs:register_mob("mobs:dirt_monster", {
 	},
 	armor = 100,
 	drawtype = "front",
-	water_damage = 1,
+	water_damage = 2,
 	lava_damage = 5,
-	light_damage = 2,
+	light_damage = 4,
 	on_rightclick = nil,
 	attack_type = "dogfight",
 	animation = {
@@ -43,4 +43,5 @@ mobs:register_mob("mobs:dirt_monster", {
 	step = 0.5,
 	blood_texture = "default_dirt.png",
 })
-mobs:register_spawn("mobs:dirt_monster", {"default:dirt_with_grass", "ethereal:gray_dirt_top"}, 3, -1, 7000, 1, 31000)
+--mobs:register_spawn("mobs:dirt_monster", {"default:dirt_with_grass", "ethereal:gray_dirt_top"}, 3, -1, 7000, 1, 31000)
+mobs:register_spawn("mobs:dirt_monster", {"default:dirt_with_grass", "ethereal:gray_dirt_top"}, 3, -1, 700, 1, 31000)

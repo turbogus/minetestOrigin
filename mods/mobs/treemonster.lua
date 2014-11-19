@@ -31,8 +31,8 @@ mobs:register_mob("mobs:tree_monster", {
 		max= 1,
 		},
 	},
-	light_resistant = true,
-	armor = 100,
+	light_resistant = false,
+	armor = 30,
 	drawtype = "front",
 	water_damage = 1,
 	lava_damage = 5,
@@ -55,7 +55,8 @@ mobs:register_mob("mobs:tree_monster", {
 	jump = true,
 	blood_texture = "default_wood.png",
 })
-mobs:register_spawn("mobs:tree_monster", {"default:leaves", "default:jungleleaves"}, 3, -1, 7000, 1, 31000)
+--mobs:register_spawn("mobs:tree_monster", {"default:leaves", "default:jungleleaves"}, 3, -1, 7000, 1, 31000)
+mobs:register_spawn("mobs:tree_monster", {"default:leaves", "default:jungleleaves"}, 3, -1, 3500, 1, 31000)
 
 -- Ethereal sapling compatibility
 

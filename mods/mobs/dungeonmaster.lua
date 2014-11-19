@@ -3,8 +3,8 @@
 
 mobs:register_mob("mobs:dungeon_master", {
 	type = "monster",
-	hp_min = 150,
-	hp_max = 200,
+	hp_min = 200,
+	hp_max = 400,
 	collisionbox = {-0.7, -0.01, -0.7, 0.7, 2.6, 0.7},
 	visual = "mesh",
 	mesh = "mobs_dungeon_master.x",
@@ -14,7 +14,7 @@ mobs:register_mob("mobs:dungeon_master", {
 	view_range = 15,
 	walk_velocity = 3,
 	run_velocity = 6,
-	damage = 0.5,
+	damage = 1,
 	drops = {
 		{name = "default:diamond",
 		chance = 4,
@@ -47,11 +47,11 @@ mobs:register_mob("mobs:dungeon_master", {
 		
 	},
 	--armor = 60,
-	armor = 200,
+	armor = 25,
 	drawtype = "front",
-	water_damage = 0,
-	lava_damage = 1,
-	light_damage = 1,
+	water_damage = 50,
+	lava_damage = 30,
+	light_damage = 50,
 	on_rightclick = nil,
 	attack_type = "shoot",
 	arrow = "mobs:fireball",
@@ -73,7 +73,8 @@ mobs:register_mob("mobs:dungeon_master", {
 	step = 0.5,
 	blood_texture = "mobs_blood.png",
 })
-mobs:register_spawn("mobs:dungeon_master", {"default:stone"}, 20, -1, 7000, 1, 31000)
+--mobs:register_spawn("mobs:dungeon_master", {"default:stone", "default:gravel"}, 20, -1, 7000, 1, 31000)
+mobs:register_spawn("mobs:dungeon_master", {"default:stone", "default:gravel"}, 20, -1, 3000, 1, 31000)
 
 -- Fireball (weapon)
 

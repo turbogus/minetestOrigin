@@ -21,7 +21,7 @@ mobs:register_mob("mobs:yeti", {
 		min = 1,
 		max = 3,},
 	},
-	light_resistant = true,
+	light_resistant = false,
 	armor = 100,
 	drawtype = "front",
 	water_damage = 3,

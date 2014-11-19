@@ -1,13 +1,13 @@
 -- Minetest 0.4 mod: bones
 -- See README.txt for licensing and other information. 
 
-local function is_owner(pos, name)
+--[[local function is_owner(pos, name)
 	local owner = minetest.get_meta(pos):get_string("owner")
 	if owner == "" or owner == name then
 		return true
 	end
 	return false
-end
+end]]--
 
 minetest.register_node("bones:bones", {
 	description = "Bones",
@@ -26,7 +26,7 @@ minetest.register_node("bones:bones", {
 		dug = {name="default_gravel_footstep", gain=1.0},
 	}),
 	
-	can_dig = function(pos, player)
+	--[[can_dig = function(pos, player)
 		local inv = minetest.get_meta(pos):get_inventory()
 		return is_owner(pos, player:get_player_name()) and inv:is_empty("main")
 	end,
@@ -98,10 +98,10 @@ minetest.register_node("bones:bones", {
 		else
 			return true
 		end
-	end,
+	end,]]--
 })
 
-minetest.register_on_dieplayer(function(player)
+--[[minetest.register_on_dieplayer(function(player)
 	if minetest.setting_getbool("creative_mode") then
 		return
 	end
@@ -167,4 +167,4 @@ minetest.register_on_dieplayer(function(player)
 	
 	local timer  = minetest.get_node_timer(pos)
 	timer:start(10)
-end)
+end)]]--

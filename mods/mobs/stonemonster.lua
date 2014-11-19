@@ -3,8 +3,8 @@
 
 mobs:register_mob("mobs:stone_monster", {
 	type = "monster",
-	hp_min = 60,
-	hp_max = 70,
+	hp_min = 100,
+	hp_max = 120,
 	collisionbox = {-0.4, -0.01, -0.4, 0.4, 1.9, 0.4},
 	visual = "mesh",
 	mesh = "mobs_stone_monster.x",
@@ -14,7 +14,7 @@ mobs:register_mob("mobs:stone_monster", {
 	view_range = 10,
 	walk_velocity = 0.5,
 	run_velocity = 2,
-	damage = 3,
+	damage = 30,
 	drops = {
 		{name = "experience:orb_five",
 		chance = 2,
@@ -38,12 +38,12 @@ mobs:register_mob("mobs:stone_monster", {
 		max= 1,
 		},
 	},
-	light_resistant = true,
-	armor = 80,
+	light_resistant = false,
+	armor = 10,
 	drawtype = "front",
 	water_damage = 0,
 	lava_damage = 0,
-	light_damage = 0,
+	light_damage = 3,
 	attack_type = "dogfight",
 	animation = {
 		speed_normal = 15,
@@ -61,4 +61,5 @@ mobs:register_mob("mobs:stone_monster", {
 	step = 0.5,
 	blood_texture = "mobs_blood.png",
 })
-mobs:register_spawn("mobs:stone_monster", {"default:stone"}, 3, -1, 7000, 1, 0)
+--mobs:register_spawn("mobs:stone_monster", {"default:stone"}, 3, -1, 7000, 1, 0)
+mobs:register_spawn("mobs:stone_monster", {"default:stone"}, 3, -1, 1000, 1, 0)

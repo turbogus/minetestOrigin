@@ -2,22 +2,22 @@
 |Items et prix ches les traders|
 +------------------------------+
 
-N°			items + qté						prix en cooper ingot
+N°			items + qté					prix en cooper ingot
 
-1			selle (x1)							1
-2			archer (x1)							5
-3			garde (x1)							5
-4			pommes (x10)							1
-5			pain (x5)							1
-6			viande rotie (x3)						1
-7			épée en fer (x1)						2
-8			pioche en fer (x1)						2
-9			ciseau (x1)							2
-10			arc simple (x1)							3
-11			fleche simple (x10)						2
-12			casque en fer (x1)						3
-13			cote de mailles en fer (x1)					4
-14			bottes en fer (x1)						3
-15			apple du nether (x3)						12
-16			poussière de glowstone (x2)					10
-17			rune du forgeron n1 (x1)					15
+1			selle (x1)						1
+2			archer (x1)						5
+3			garde (x1)						5
+4			pommes (x10)						1
+5			pain (x5)						1
+6			viande rotie (x3)					1
+7			épée en fer (x1)					2
+8			pioche en fer (x1)					2
+9			ciseau (x1)						2
+10			arc simple (x1)						3
+11			fleche simple (x10)					2
+12			casque en fer (x1)					3
+13			cote de mailles en fer (x1)				4
+14			bottes en fer (x1)					3
+15			apple du nether (x3)					12
+16			poussière de glowstone (x2)				10
+17			rune du forgeron n1 (x1)				15 (plus à jour!!!!)

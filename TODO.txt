@@ -1,0 +1,6 @@
+- Plus de spawn de monstre / monstres plus méchant
+- insertion d'herbe magique pouvant restaurer la vie (à base de poison ivy) (+2 HP)
+- intégrer le runes:septre (pour installer les runes dessus et enchanter directement l'environnement) et le runes:deat_hammer (marteau surpuissant !)
+- le nether book est un item permettant de transformer le monde normal en monde du nether, enlever l'option arme mais garder la consommation des points d'XP
+- Corriger le bug de morefences (impossible de prendre les fences une fois posées)
+- enlever les potions en rapport avec la santé

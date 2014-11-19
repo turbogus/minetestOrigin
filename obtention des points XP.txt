@@ -7,7 +7,7 @@
 	* copper
 
 
-Monstres donnant des points d'expériences :
+Monstres donnant des points d'expériences plus a jour !!!!) :
 
 	* tuer un zombi +1
 	* tuer un oerkki +10 / +20

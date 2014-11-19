@@ -9,12 +9,12 @@ mobs:register_mob("mobs:pumba", {
 	visual = "mesh",
 	mesh = "mobs_pumba.x",
 	makes_footstep_sound = true,
-	walk_velocity = 2,
-	armor = 200,
+	walk_velocity = 3,
+	armor = 50,
 	drops = {
 		{name = "mobs:pork_raw",
 		chance = 1,
-		min = 2,
+		min = 1,
 		max = 3,},
 	},
 	drawtype = "front",
@@ -55,8 +55,8 @@ passive = true,
 	end,
 	
 })
-mobs:register_spawn("mobs:pumba", {"ethereal:mushroom_dirt", "default:dirt_with_grass","default:dirt","default:snow", "default:snowblock"}, 20, 8, 9000, 1, 31000)
-
+--mobs:register_spawn("mobs:pumba", {"ethereal:mushroom_dirt", "default:dirt_with_grass","default:dirt","default:snow", "default:snowblock"}, 20, 8, 9000, 1, 31000)
+mobs:register_spawn("mobs:pumba", {"ethereal:mushroom_dirt", "default:dirt_with_grass","default:dirt","default:snow", "default:snowblock"}, 20, 8, 2000, 1, 31000)
 -- Porkchops
 
 minetest.register_craftitem("mobs:pork_raw", {

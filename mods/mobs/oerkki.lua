@@ -3,8 +3,8 @@
 
 mobs:register_mob("mobs:oerkki", {
 	type = "monster",
-	hp_min = 70,
-	hp_max = 80,
+	hp_min = 100,
+	hp_max = 200,
 	collisionbox = {-0.4, -0.01, -0.4, 0.4, 1.9, 0.4},
 	visual = "mesh",
 	mesh = "mobs_oerkki.x",
@@ -34,12 +34,12 @@ mobs:register_mob("mobs:oerkki", {
 		min = 2,
 		max = 4,},
 	},
-	armor = 100,
+	armor = 40,
 	drawtype = "front",
-	light_resistant = true,
+	light_resistant = false,
 	water_damage = 1,
 	lava_damage = 1,
-	light_damage = 0,
+	light_damage = 5,
 	attack_type = "dogfight",
 	animation = {
 		stand_start = 0,

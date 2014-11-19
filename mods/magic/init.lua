@@ -188,7 +188,7 @@
 
 -- Déclaration de l'item : dans le mod potionspack
 	
-
+--[[
 -- Craft 
 	minetest.register_craft(
 	{
@@ -225,14 +225,14 @@
 		}
 
 	})
-	
+]]--	
 --
 -- Potion de santé niveau 2 : donne 12 Hp à l'utilisateur
 -- se craft à partir d'une potion de santé de niveau 1 et de poussière de glowstone.
 --
 
 -- Déclaration de l'item : dans le mod potionspack
-
+--[[
 -- Craft
 minetest.register_craft(
 	{
@@ -258,7 +258,7 @@ minetest.register_craft(
 	})
 	
 	
-
+]]--
 --*******************
 
 
@@ -561,7 +561,7 @@ minetest.register_craft(
 
 -- 
 -- Potion aleatoire " mais que va faire cette potion ?", produit un effet aléatoire sur
--- le joueur. Se fabrique en mélanger de la poussière de glowstone et de la poudre d'os 
+-- le joueur. Se fabrique en mélangeant de la poussière de glowstone et de la poudre d'os 
 -- à une potion de base. 
 -- NB : aucun craft inverse possible avec cette potion !
 --

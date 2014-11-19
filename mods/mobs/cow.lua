@@ -82,7 +82,8 @@ mobs:register_mob("mobs:cow", {
 	blood_texture = "mobs_blood.png",
 	passive = true,
 })
-mobs:register_spawn("mobs:cow", {"default:dirt_with_grass", "ethereal:green_dirt_top", "ethereal:prairie_dirt"}, 20, 0, 11000, 1, 31000)
+--mobs:register_spawn("mobs:cow", {"default:dirt_with_grass", "ethereal:green_dirt_top", "ethereal:prairie_dirt"}, 20, 0, 11000, 1, 31000)
+mobs:register_spawn("mobs:cow", {"default:dirt_with_grass", "ethereal:green_dirt_top", "ethereal:prairie_dirt"}, 20, 0, 6000, 1, 31000)
 
 -- Bucket of Milk
 
