@@ -15,7 +15,10 @@
 ---> Mortis Angelum, L'Ange de la Mort, tuer toutes les entités joueurs/animales/monstres dans un rayon de 100 blocs
 ---- Les plus violentes de ces runes coûteront au joueur d'énormes sommes, des items, et ne seront sûrement pas gardées.
 
-local runes = {}
+runes = {}
+
+-- Loading modules
+dofile(minetest.get_modpath("runes").."/cauldron.lua")
 
 runes.runes = {
 	{"smith","Rune du Forgeron","#00FF00"},
