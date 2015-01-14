@@ -117,3 +117,30 @@ minetest.register_node("runes:cauldron", {
 	groups = {oddly_breakable_by_hand = 2},
 })
 
+minetest.register_abm({
+	nodenames = {"runes:cauldron"},
+	interval = 1,
+	chance = 1,
+	action = function(pos)
+		
+		local meta = minetest.get_meta(pos)
+		local inv 	= meta:get_inventory()
+		
+		local oldstate = meta:get_string("status")
+		
+		-- Update State --
+		print("check")
+		if not inv:is_empty("input") and not inv:is_empty("potion")
+			and inv:is_empty("output") then
+			meta:set_string("status","enabled")
+			if oldstate ~= "enabled" then
+				print("changed")
+			end
+		else
+			meta:set_string("status","disabled")
+			if oldstate ~= "disabled" then
+				print("changed, again")
+			end
+		end
+	end,
+})
