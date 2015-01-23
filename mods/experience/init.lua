@@ -326,7 +326,7 @@ minetest.register_node("experience:orb_one", {
 	walkable = false,
 	paramtype = "light",
 	sunlight_propagates = true,
-	drop = "default:air",
+	drop = "air",
 	groups = {fleshy=3, dig_immediate=3, xp=1},
 })
 
