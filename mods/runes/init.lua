@@ -77,11 +77,46 @@ runes.handlers.smith.on_receive_fields = function (pos, formname, fields, sender
 	local inv  = meta:get_inventory()
 	
 	if fields.improve then
-		-- improve function
+		local t_stack = inv:get_list("smith_input")[1]
+		local xp = io.open(minetest.get_worldpath().."/"..sender:get_player_name().."_experience", "r")
+		local experience = xp:read("*l")+0
+		if t_stack:get_wear() == 0 then
+			core.chat_send_player(sender:get_player_name(),"You don't need to use this spell, the tool is brand new..")
+			return
+		end
+		-- Tool's properties
+		-- table.foreach(minetest.registered_tools[t_stack:get_name()]["tool_capabilities"].groupcaps.cracky,print)
+		local crack_xp = math.ceil(minetest.registered_tools[t_stack:get_name()]["tool_capabilities"].groupcaps.cracky.uses + 
+			(minetest.registered_tools[t_stack:get_name()]["tool_capabilities"].groupcaps.cracky.times[3] *
+				minetest.registered_tools[t_stack:get_name()]["tool_capabilities"].groupcaps.cracky.maxlevel))
+		
+
+		print(crack_xp)
+		print(t_stack:get_wear())
+		print(t_stack:get_wear()%(65535/crack_xp))
+		if experience < 65535/math.ceil(crack_xp * t_stack:get_wear()%(65535/crack_xp)) then
+			core.chat_send_player(sender:get_player_name(),"Sorry, you don't have enough experience to use that spell young magician...")
+			return
+		end
+		
+		local new_wear = t_stack:get_wear() - (65535/crack_xp)
+		if new_wear < 0 then new_wear = 0 end
+		t_stack:set_wear(new_wear)
+		print(t_stack:get_wear())
+		inv:set_list("smith_input", {[1] = t_stack})
+		local new_xp = experience - 50
+		xp:write(new_xp)
+		xp:close()
+		
+		--Mise à jour du HUD avec les nouveaux points d'XP
+		local nom = sender:get_player_name()
+		if xpHUD[nom] then
+			sender:hud_change(xpHUD[nom].id, "text","XP :"..new_xp.."")
+		end
 	elseif fields.quit then
 		if not inv:is_empty("smith_input") then
 			local inv_stack = inv:get_list("smith_input")[1]
-			minetest.add_item({x = pos.x, y = pos.y + 0.5, z = pos.z}, inv_stack:get_name())
+			minetest.add_item({x = pos.x, y = pos.y + 1, z = pos.z}, {name = inv_stack:get_name(), wear = inv_stack:get_wear()})
 		end
 		minetest.remove_node(pos)
 		minetest.add_node(pos,{name = "runes:table_empty"})

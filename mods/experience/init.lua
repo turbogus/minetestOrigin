@@ -1,6 +1,6 @@
 
 -- list pour l'affichage des pts d'Xp dans le hud
-local xpHUD = {}
+xpHUD = {}
 
 
 --[[level1 = 100
