@@ -29,6 +29,70 @@ runes.runes = {
 	{"mortisangelum","Rune de l'Ange de la Mort","#222222"},
 }
 
+-- Fields initialization
+runes.handlers = {}
+
+-- Handlers' tables
+runes.handlers.smith = {}
+runes.handlers.thief = {}
+runes.handlers.assassin = {}
+runes.handlers.pyromaniac = {}
+runes.handlers.necromancer = {}
+runes.handlers.mortisangelum = {}
+
+-- On construct handlers
+runes.handlers.smith.on_construct = function(pos)
+	local meta = minetest.get_meta(pos)
+	local inv = meta:get_inventory()
+
+	meta:set_string("infotext", "Smith invocation!")
+	meta:set_string("formspec",
+		"size[10,8]"..
+		"list[context;smith_input;4.5,1;1,1]"..
+		"list[current_player;main;1,3;8,4]"..
+		"button[6,1;1,1;improve;~]"
+	)
+	inv:set_size("smith_input",1*1)
+	inv:set_size("main",4*8)
+end
+
+runes.handlers.smith.allow_metadata_inventory_put = function (pos, listname, index, stack, player)
+	if minetest.registered_tools[stack:get_name()] then
+		return stack:get_count()
+	else
+		return 0
+	end
+end
+
+runes.handlers.smith.can_dig = function (pos, player)
+	local meta = minetest.get_meta(pos)
+	local inv  = meta:get_inventory()
+
+	return inv:is_empty("smith_input")
+end
+
+runes.handlers.smith.on_receive_fields = function (pos, formname, fields, sender)
+	table.foreach(fields, print)
+	local meta = minetest.get_meta(pos)
+	local inv  = meta:get_inventory()
+	
+	if fields.improve then
+		-- improve function
+	elseif fields.quit then
+		if not inv:is_empty("smith_input") then
+			local inv_stack = inv:get_list("smith_input")[1]
+			minetest.add_item({x = pos.x, y = pos.y + 0.5, z = pos.z}, inv_stack:get_name())
+		end
+		minetest.remove_node(pos)
+		minetest.add_node(pos,{name = "runes:table_empty"})
+	end
+end
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+---- TABLES
+----
+
 -- Enregistrement de la table vide.
 minetest.register_node ("runes:table_empty", {
 	description = "Table d'enchantement vide",
@@ -36,6 +100,7 @@ minetest.register_node ("runes:table_empty", {
 	groups = {oddly_breakable_by_hand = 2},
 	drawtype = "nodebox",
 	paramtype = "light",
+	light_source = 8,
 	node_box = {
 		type = 'fixed',
 		fixed = {-0.5, -0.5, -0.5, 0.5, 0, 0.5},
@@ -64,7 +129,6 @@ minetest.register_node ("runes:table_empty", {
 	end,
 	on_metadata_inventory_put = function(pos, listname, index, stack, player)
 		local code = stack:get_name():split(":")[2]:split("_")[2]
-		print("!")
 		local node = minetest.get_node(pos)
 		minetest.remove_node(pos)
 		minetest.add_node(pos,{name = "runes:table_"..code})
@@ -91,11 +155,15 @@ for _, row in ipairs(runes.runes) do
 		groups = {oddly_breakable_by_hand = 2},
 		drawtype = "nodebox",
 		paramtype = "light",
+		light_source = 8,
 		node_box = {
 			type = "fixed",
 			fixed = {-0.5, -0.5, -0.5, 0.5, 0, 0.5},
 		},
+		on_construct = runes.handlers.smith.on_construct,
+		allow_metadata_inventory_put = runes.handlers.smith.allow_metadata_inventory_put,
+		can_dig = runes.handlers.smith.can_dig,
+		on_receive_fields = runes.handlers.smith.on_receive_fields,
 		drop = "runes:table_empty",
 	})
 end
-	
