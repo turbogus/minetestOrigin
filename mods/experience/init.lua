@@ -312,7 +312,7 @@ minetest.register_entity("experience:orb", {
 
 
 -- déclaration d'une orb d'XP en tant que node ( pour utilisation avec animals )
--- On récupère ainsi dans l'inventaire un item "orbs". Il faut le jeter par terre pui
+-- On récupère ainsi dans l'invente un item "orbs". Il faut le jeter par terre pui
 -- taper dessus pour que le point d'XP soit prix en compte dans le compteur d'XP.
 -- L'item est ensuite effaçé pour ne plus être réutilisé.
 --
@@ -326,7 +326,7 @@ minetest.register_node("experience:orb_one", {
 	walkable = false,
 	paramtype = "light",
 	sunlight_propagates = true,
-	drop = "air",
+	drop = "",
 	groups = {fleshy=3, dig_immediate=3, xp=1},
 })
 
@@ -341,7 +341,7 @@ minetest.register_node("experience:orb_five", {
 	walkable = false,
 	paramtype = "light",
 	sunlight_propagates = true,
-	drop = "default:air",
+	drop = "",
 	groups = {fleshy=3, dig_immediate=3},
 })
 minetest.register_on_punchnode(function(p, node, player)
@@ -368,7 +368,7 @@ minetest.register_node("experience:orb_ten", {
 	walkable = false,
 	paramtype = "light",
 	sunlight_propagates = true,
-	drop = "default:air",
+	drop = "",
 	groups = {fleshy=3, dig_immediate=3},
 })
 minetest.register_on_punchnode(function(p, node, player)
@@ -393,7 +393,7 @@ minetest.register_node("experience:orb_fifty", {
 	walkable = false,
 	paramtype = "light",
 	sunlight_propagates = true,
-	drop = "default:air",
+	drop = "",
 	groups = {fleshy=3, dig_immediate=3},
 })
 minetest.register_on_punchnode(function(p, node, player)
@@ -487,7 +487,7 @@ end)
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
 
--- Boite pour faire des enchantements !
+-- Boite pour fe des enchantements !
 --
 --
 
@@ -526,7 +526,7 @@ minetest.register_node("experience:magic_box", {
 	legacy_facedir_simple = true,
 	is_ground_content = false,
 	
-	-- Mise en forme de l'inventaire
+	-- Mise en forme de l'invente
 	--
 	on_construct = function(pos)
 		local meta = minetest.get_meta(pos)
@@ -538,7 +538,7 @@ minetest.register_node("experience:magic_box", {
 		inv:set_size("transformation", 1)
 	end,
 	
-	--Peut-être pris seulement si l'inventaire est vide !
+	--Peut-être pris seulement si l'invente est vide !
 	--
 	can_dig = function(pos,player)
 		local meta = minetest.get_meta(pos);
